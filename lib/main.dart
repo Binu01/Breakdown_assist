@@ -1,5 +1,8 @@
+import 'package:breakdown_assist/Splash.dart';
+import 'package:breakdown_assist/user%20or%20mech%20page.dart';
 import 'package:flutter/material.dart';
 
+import 'Admin/Admin_home.dart';
 import 'Admin/admin login.dart';
 
 void main() {
@@ -13,12 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: Adminlogin()
+      debugShowCheckedModeBanner: false,
+      home: Admin_home()
     );
   }
 }
