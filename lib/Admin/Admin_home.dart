@@ -21,18 +21,12 @@ class _Admin_homeState extends State<Admin_home> {
   ];
 
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
+    return Scaffold(
           appBar: AppBar(
           leading: CircleAvatar(
-
+            radius: 40,
+            backgroundImage: AssetImage("Assets/profile img.png"),
           ),
-            bottom: TabBar(tabs: [
-              Tab(child: Text("User",style: TextStyle(fontSize: 25,color: Colors.blue),),),
-              Tab(child: Text("Mechanic",style: TextStyle(fontSize: 25,color: Colors.blue),),),
-            ]
-            ),
           ),
       bottomNavigationBar: BottomNavigationBar(items:[
       BottomNavigationBarItem(
@@ -58,7 +52,6 @@ class _Admin_homeState extends State<Admin_home> {
         },
       ),
         body: Tabs.elementAt(_indexno),
-      ),
-    );
+      );
   }
 }

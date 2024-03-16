@@ -13,6 +13,7 @@ class _PaymentTabState extends State<PaymentTab> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(
+          vertical: 20,
           horizontal: 5
         ),
         child: ListView.builder(

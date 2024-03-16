@@ -11,7 +11,7 @@ class _NotificationTabState extends State<NotificationTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(onPressed: (){},
           child: Icon(Icons.add),
       ),

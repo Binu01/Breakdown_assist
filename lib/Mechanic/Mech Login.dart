@@ -1,17 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Admin_login extends StatefulWidget {
-  const Admin_login({super.key});
+class Mech_Login extends StatefulWidget {
+  const Mech_Login({super.key});
 
   @override
-  State<Admin_login> createState() => _Admin_loginState();
+  State<Mech_Login> createState() => _Mech_LoginState();
 }
 
-class _Admin_loginState extends State<Admin_login> {
+class _Mech_LoginState extends State<Mech_Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
@@ -45,9 +45,9 @@ class _Admin_loginState extends State<Admin_login> {
               child: TextFormField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20)
+                      borderRadius: BorderRadius.circular(20)
                   ),
-                    hintText: 'Username',
+                  hintText: 'Username',
                 ),
               ),
             ),
@@ -74,8 +74,14 @@ class _Admin_loginState extends State<Admin_login> {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(150, 0, 0, 0),
+              child: TextButton(onPressed: (){},
+                  child: Text("Forgot Password?",style: TextStyle(fontSize: 15),)),
+            ),
+
             SizedBox(
-              height: 150,
+              height: 50,
             ),
             Container(
               height: 50,
@@ -91,6 +97,17 @@ class _Admin_loginState extends State<Admin_login> {
                   onPressed: (){},
                   child: Text("Login",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)
               ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Do you have account ?"),
+                TextButton(onPressed: (){},
+                    child: Text("SignUp",style: TextStyle(color: Colors.blue),))
+              ],
             ),
           ],
         ),
