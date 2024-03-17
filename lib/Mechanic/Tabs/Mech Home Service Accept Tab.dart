@@ -48,9 +48,10 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                     ),
                     Container(
                       decoration: BoxDecoration(
+                        border: Border.all(color: Colors.red),
                         color: Colors.red
                       ),
-                      child: Text("Payment pending",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.bold),),
+                      child: Text("Payment pending",style: TextStyle(color: Colors.white,fontSize: 15,),),
                     )
                   ],
                 ),
