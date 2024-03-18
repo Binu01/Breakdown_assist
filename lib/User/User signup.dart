@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Mech_SignUp extends StatefulWidget {
-  const Mech_SignUp({super.key});
+class User_SignUp extends StatefulWidget {
+  const User_SignUp({super.key});
 
   @override
-  State<Mech_SignUp> createState() => _Mech_SignUpState();
+  State<User_SignUp> createState() => _User_SignUpState();
 }
 
-class _Mech_SignUpState extends State<Mech_SignUp> {
+class _User_SignUpState extends State<User_SignUp> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -73,6 +73,9 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 10,
+            ),
             Row(
               children: [
                 Padding(
@@ -99,7 +102,7 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-                  child: Text("Enter Your Work Experience",style: TextStyle(fontSize: 20),),
+                  child: Text("Enter Your Password",style: TextStyle(fontSize: 20),),
                 ),
               ],
             ),
@@ -110,59 +113,14 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20)
                   ),
-                  hintText: 'Work Experience',
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-                  child: Text("Enter Your Work Shop Name",style: TextStyle(fontSize: 20),),
-                ),
-              ],
-            ),
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
-                  ),
-                  hintText: 'Work shop Name',
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-                  child: Text("Enter Password",style: TextStyle(fontSize: 20),),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
-                  ),
-                  hintText: 'Password',
+                  hintText: 'Enter Your Password',
                 ),
               ),
             ),
             SizedBox(
               height: 50,
             ),
+
             Container(
               height: 50,
               width: 150,
@@ -177,9 +135,6 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                   onPressed: (){},
                   child: Text("SignUp",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)
               ),
-            ),
-            SizedBox(
-              height: 30,
             ),
           ],
         ),

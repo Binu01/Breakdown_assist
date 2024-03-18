@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class Rating_Tab extends StatefulWidget {
@@ -31,38 +33,42 @@ class _Rating_TabState extends State<Rating_Tab> {
             SizedBox(
               height: 10,
             ),
-            Container(
-              height: 200,
-              width: 330,
-              decoration: BoxDecoration(
-                color: Colors.blue.shade200,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Spacer(),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CircleAvatar(
-                        radius: 45,
-                        backgroundImage: AssetImage("Assets/profile img.png"),
+            Flexible(
+              child: ListView.separated(
+                  separatorBuilder: (context,index)=> Divider(thickness: 5,color: Colors.white,),
+                  itemCount: 2,
+                  itemBuilder: (BuildContext context,int index) {
+                    return Container(
+                      height: 150,
+                      decoration: BoxDecoration(
+                        color: Colors.blue.shade200,
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                      Text("Name",style: TextStyle(fontSize: 20),)
-                    ],
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+              Spacer(),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CircleAvatar(
+                    radius: 45,
+                    backgroundImage: AssetImage("Assets/profile img.png"),
                   ),
-                 Spacer(),
-                 Column(
-                   crossAxisAlignment: CrossAxisAlignment.center,
-                   mainAxisAlignment: MainAxisAlignment.center,
-                   children: [
-                     Text("Engine work",style: TextStyle(fontSize: 20),),
-                     Text("Date",style: TextStyle(fontSize: 20)),
-                     Text("Time",style: TextStyle(fontSize: 20)),
-                     Text("Place",style: TextStyle(fontSize: 20)),
-                   ],
-                 ),
+                  Text("Name", style: TextStyle(fontSize: 20),)
+                ],
+              ),
+              Spacer(),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Engine work", style: TextStyle(fontSize: 20),),
+                  Text("Date", style: TextStyle(fontSize: 20)),
+                  Text("Time", style: TextStyle(fontSize: 20)),
+                  Text("Place", style: TextStyle(fontSize: 20)),
+                ],
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -72,19 +78,20 @@ class _Rating_TabState extends State<Rating_Tab> {
                   ),
                   RatingBar.builder(
                     itemSize: 20,
-                  minRating: 0.5,
-                  direction: Axis.horizontal,
-                  allowHalfRating: true,
-                  itemCount: 5,
-                  itemBuilder: (context, _) => Icon(
-                    Icons.star,
-                    color: Colors.amber,
-                  ),
-                  onRatingUpdate: (rating)=>
-                    setState(() {
-                   this.rating = rating;
-                    }
-                    ),
+                    minRating: 0.5,
+                    direction: Axis.horizontal,
+                    allowHalfRating: true,
+                    itemCount: 5,
+                    itemBuilder: (context, _) =>
+                        Icon(
+                          Icons.star,
+                          color: Colors.amber,
+                        ),
+                    onRatingUpdate: (rating) =>
+                        setState(() {
+                          this.rating = rating;
+                        }
+                        ),
                   ),
                   SizedBox(
                     height: 5,
@@ -93,10 +100,13 @@ class _Rating_TabState extends State<Rating_Tab> {
 
                 ],
               ),
-                  Spacer(),
-                ],
+              Spacer(),
+                        ],
+                      ),
+                    );
+                  }
               ),
-            ),
+            )
           ],
         ),
       ),

@@ -28,6 +28,7 @@ class _Mech_NotificationState extends State<Mech_Notification> {
             ),
             child: Container(
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
                 border: Border.all()
               ),
               height: 100,
@@ -40,16 +41,16 @@ class _Mech_NotificationState extends State<Mech_Notification> {
                  Row(
                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                    children: [
-                     Text("Admin Notification"),
+                     Text("Admin Notification",style: TextStyle(fontSize: 20)),
                      SizedBox(
-                       width: 100,
+                       width: 40,
                      ),
-                     Text("Time"),
+                     Text("Time",style: TextStyle(fontSize: 15)),
                    ],
                  ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(275, 50, 0, 0),
-                    child: Text("Date"),
+                    padding: const EdgeInsets.fromLTRB(260, 40, 0, 0),
+                    child: Text("Date",style: TextStyle(fontSize: 15)),
                   ),
                 ],
               ),

@@ -20,13 +20,12 @@ class _HomeTabState extends State<HomeTab> {
         body:Column(
           children: [
             TabBar(tabs: [
-              Tab(child: Text("User"),),
-              Tab(child: Text("Mechanic"),),
+              Tab(child: Text("User",style: TextStyle(fontSize: 20),),),
+              Tab(child: Text("Mechanic",style: TextStyle(fontSize: 20)),),
             ]
             ),
             Expanded(
               child: TabBarView(children: [
-
                 Userlist(),
                 MechanicList(),
               ]),

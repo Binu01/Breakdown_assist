@@ -22,7 +22,9 @@ class _Admin_homeState extends State<Admin_home> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
           appBar: AppBar(
+            backgroundColor: Colors.blue.shade200,
           leading: CircleAvatar(
             radius: 40,
             backgroundImage: AssetImage("Assets/profile img.png"),
