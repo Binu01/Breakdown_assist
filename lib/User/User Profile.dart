@@ -11,7 +11,7 @@ class _User_ProfileState extends State<User_Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+   backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -38,15 +38,18 @@ class _User_ProfileState extends State<User_Profile> {
                 height: 70,
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 185, 0),
+                padding: const EdgeInsets.fromLTRB(0, 0, 175, 0),
                 child: Text("Enter Your Name",style: TextStyle(fontSize: 20),),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Name"
                   ),
@@ -56,17 +59,20 @@ class _User_ProfileState extends State<User_Profile> {
                 height: 10,
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 110, 0),
+                padding: const EdgeInsets.fromLTRB(0, 0, 100, 0),
                 child: Text(
                   maxLines: 1,
                   "Enter Your Phone Number",style: TextStyle(fontSize: 20),),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Phone Number"
                   ),
@@ -76,15 +82,18 @@ class _User_ProfileState extends State<User_Profile> {
                 height: 10,
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 185, 0),
+                padding: const EdgeInsets.fromLTRB(0, 0, 175, 0),
                 child: Text("Enter Your Email",style: TextStyle(fontSize: 20),),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: " Enter Email"
                   ),

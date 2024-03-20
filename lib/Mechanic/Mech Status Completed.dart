@@ -14,6 +14,7 @@ class _Mech_status_completedState extends State<Mech_status_completed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Center(
           child: Column(

@@ -11,8 +11,7 @@ class _User_LoginState extends State<User_Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blue.shade200,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,8 +43,11 @@ class _User_LoginState extends State<User_Login> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10)
                   ),
                   hintText: 'Username',
                 ),
@@ -67,8 +69,11 @@ class _User_LoginState extends State<User_Login> {
               child: TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10)
                   ),
                   hintText: 'Password',
                 ),
@@ -77,7 +82,7 @@ class _User_LoginState extends State<User_Login> {
             Padding(
               padding: const EdgeInsets.fromLTRB(150, 0, 0, 0),
               child: TextButton(onPressed: (){},
-                  child: Text("Forgot Password?",style: TextStyle(fontSize: 15),)),
+                  child: Text("Forgot Password?",style: TextStyle(fontSize: 15,color: Colors.blue),)),
             ),
 
             SizedBox(

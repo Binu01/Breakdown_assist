@@ -22,15 +22,19 @@ class _Admin_homeState extends State<Admin_home> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: Colors.blue.shade200,
-          leading: CircleAvatar(
-            radius: 40,
-            backgroundImage: AssetImage("Assets/profile img.png"),
+          leading: Padding(
+            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+            child: CircleAvatar(
+              backgroundImage: AssetImage("Assets/profile img.png"),
+            ),
           ),
           ),
-      bottomNavigationBar: BottomNavigationBar(items:[
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.blue,
+        items:[
       BottomNavigationBarItem(
       icon: Icon(Icons.home),
       label: 'Home',

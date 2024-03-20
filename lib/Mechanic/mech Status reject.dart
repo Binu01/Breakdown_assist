@@ -14,6 +14,7 @@ class _Mech_Status_RejectState extends State<Mech_Status_Reject> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Center(
             child: Column(

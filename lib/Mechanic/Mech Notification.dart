@@ -14,7 +14,7 @@ class _Mech_NotificationState extends State<Mech_Notification> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.blue.shade200,
-        title: Text("Notification",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
+        title: Text("Notification",style: TextStyle(fontSize: 30),),
         centerTitle: true,
       ),
     body: ListView.separated(
@@ -22,10 +22,7 @@ class _Mech_NotificationState extends State<Mech_Notification> {
         itemCount: 2,
         itemBuilder: (BuildContext context,int index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 5,
-              horizontal: 20
-            ),
+            padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -49,7 +46,7 @@ class _Mech_NotificationState extends State<Mech_Notification> {
                    ],
                  ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(260, 40, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(280, 40, 0, 0),
                     child: Text("Date",style: TextStyle(fontSize: 15)),
                   ),
                 ],

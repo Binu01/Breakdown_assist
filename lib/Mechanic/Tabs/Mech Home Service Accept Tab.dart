@@ -18,8 +18,9 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
           itemCount: 2,
           itemBuilder:  (BuildContext context,int index){
             return Padding(
-              padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+              padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
               child: Card(
+                color: Colors.blue.shade200,
                 child: Row(
                   children: [
                     SizedBox(
@@ -27,6 +28,9 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                     ),
                     Column(
                       children: [
+                        SizedBox(
+                          height: 5,
+                        ),
                         CircleAvatar(
                           backgroundImage: AssetImage("Assets/profile img.png"),
                           radius: 40,

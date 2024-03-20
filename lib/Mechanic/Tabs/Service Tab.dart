@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Service_Tab extends StatefulWidget {
@@ -50,7 +51,7 @@ class _Service_TabState extends State<Service_Tab> {
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)
+                            borderRadius: BorderRadius.circular(30)
                         ),
                         backgroundColor: Colors.blue,
                         foregroundColor: Colors.white,
@@ -66,42 +67,33 @@ class _Service_TabState extends State<Service_Tab> {
         },
       child: Icon(
           size: 50,
-          Icons.add),),
+          Icons.add),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.blue.shade200,
         title: Text("Services",style: TextStyle(fontSize: 30),),
         centerTitle: true,
       ),
       body: Center(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 40,
-            ),
-            Container(
-              width: 330,
-              height: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                  color: Colors.blue.shade200,
-                  border: Border.all(color: Colors.blue.shade200),
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: ListView.separated(
-                  separatorBuilder: (context,index)=> Divider(thickness: 1,color: Colors.black,),
-                itemCount: 3,
-                  itemBuilder: (BuildContext context,int index){
-                    return ListTile(
-                        title: Text("Tyre puncture",style: TextStyle(fontSize: 20),),
-                        trailing: IconButton(
-                            onPressed: (){},
-                            icon: Icon(Icons.delete),
-                          iconSize: 30,
-                        ),
-                      );
-                  }
-                  ),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(10, 10, 10, 5),
+          child: Card(
+            color: Colors.blue.shade200,
+            child: ListView.separated(
+                separatorBuilder: (context,index)=> Divider(thickness: 1,color: Colors.black,),
+              itemCount: 4,
+                itemBuilder: (BuildContext context,int index){
+                  return ListTile(
+                      title: Text("Tyre puncture",style: TextStyle(fontSize: 20),),
+                      trailing: IconButton(
+                          onPressed: (){},
+                          icon: Icon(Icons.delete),
+                        iconSize: 30,
+                      ),
+                    );
+                }
+                ),
+          ),
         ),
       ),
     );

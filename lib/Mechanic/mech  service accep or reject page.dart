@@ -32,70 +32,77 @@ class _Mech_service_AcceptORrejectState extends State<Mech_service_AcceptORrejec
               SizedBox(
                 height: 60,
               ),
+              Row(
+                children: [
+
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                    child: Container(
+                      child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Problem",style: TextStyle(fontSize: 20),),
+                          Text("Place",style: TextStyle(fontSize: 20),),
+                          Text("Date",style: TextStyle(fontSize: 20),),
+                          Text("Time",style: TextStyle(fontSize: 20),),
+                          Text("Contact number",style: TextStyle(fontSize: 20),),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    child: Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(": Problem",style: TextStyle(fontSize: 20),),
+                          Text(": Place",style: TextStyle(fontSize: 20),),
+                          Text(": Date",style: TextStyle(fontSize: 20),),
+                          Text(": Time",style: TextStyle(fontSize: 20),),
+                          Text(": 0000000000",style: TextStyle(fontSize: 20),),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
               // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               //   children: [
-              //
-              //     Container(
-              //       child: Column(
-              //         children: [
-              //           Text("Problem",style: TextStyle(fontSize: 20),),
-              //           Text("Place",style: TextStyle(fontSize: 20),),
-              //           Text("Date",style: TextStyle(fontSize: 20),),
-              //           Text("Time",style: TextStyle(fontSize: 20),),
-              //           Text("Contact number",style: TextStyle(fontSize: 20),),
-              //         ],
-              //       ),
-              //     ),
-              //     Container(
-              //       child: Column(
-              //         children: [
-              //           Text(": Problem",style: TextStyle(fontSize: 20),),
-              //           Text(": Place",style: TextStyle(fontSize: 20),),
-              //           Text(": Date",style: TextStyle(fontSize: 20),),
-              //           Text(": Time",style: TextStyle(fontSize: 20),),
-              //           Text(": 0000000000",style: TextStyle(fontSize: 20),),
-              //         ],
-              //       ),
-              //     )
+              //     Text("Problem",style: TextStyle(fontSize: 20),),
+              //     Text(": Fuel Leaking",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
               //   ],
               // ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text("Problem",style: TextStyle(fontSize: 20),),
-                  Text(": Fuel Leaking",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text("Place",style: TextStyle(fontSize: 20),),
-                  Text(": Kozhikode",style: TextStyle(fontSize: 20),),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text("Date",style: TextStyle(fontSize: 20),),
-                  Text(": Date",style: TextStyle(fontSize: 20),),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text("Time",style: TextStyle(fontSize: 20),),
-
-                  Text(": Time",style: TextStyle(fontSize: 20),),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text("Contact Number",style: TextStyle(fontSize: 20),),
-                  Text(": 0000000000",style: TextStyle(fontSize: 20),),
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //   children: [
+              //     Text("Place",style: TextStyle(fontSize: 20),),
+              //     Text(": Kozhikode",style: TextStyle(fontSize: 20),),
+              //   ],
+              // ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //   children: [
+              //     Text("Date",style: TextStyle(fontSize: 20),),
+              //     Text(": Date",style: TextStyle(fontSize: 20),),
+              //   ],
+              // ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //   children: [
+              //     Text("Time",style: TextStyle(fontSize: 20),),
+              //
+              //     Text(": Time",style: TextStyle(fontSize: 20),),
+              //   ],
+              // ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //   children: [
+              //     Text("Contact Number",style: TextStyle(fontSize: 20),),
+              //     Text(": 0000000000",style: TextStyle(fontSize: 20),),
+              //   ],
+              // ),
               SizedBox(
                 height: 130,
               ),
@@ -104,7 +111,7 @@ class _Mech_service_AcceptORrejectState extends State<Mech_service_AcceptORrejec
                 children: [
                   ElevatedButton(
                       style:ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green.shade400,
+                        backgroundColor: Colors.green.shade300,
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
                       ),
@@ -112,7 +119,7 @@ class _Mech_service_AcceptORrejectState extends State<Mech_service_AcceptORrejec
                       child: Text("Accept",style: TextStyle(fontSize: 20),)),
                   ElevatedButton(
                       style:ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red.shade400,
+                          backgroundColor: Colors.red.shade300,
                           foregroundColor: Colors.white,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
                       ),

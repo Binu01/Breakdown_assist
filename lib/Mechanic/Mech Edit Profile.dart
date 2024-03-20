@@ -46,11 +46,14 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                 height: 20,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Name"
                   ),
@@ -61,11 +64,14 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
               ),
 
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Username"
                   ),
@@ -76,11 +82,14 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
               ),
 
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Phone Number"
                   ),
@@ -90,11 +99,14 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                 height: 10,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Email"
                   ),
@@ -105,11 +117,14 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
               ),
 
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Experience"
                   ),
@@ -120,11 +135,14 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
               ),
 
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Location"
                   ),
@@ -135,11 +153,14 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
               ),
 
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Shop Name"
                   ),
@@ -150,6 +171,7 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
+                    fixedSize: Size(150, 30),
                       backgroundColor: Colors.blue,
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(

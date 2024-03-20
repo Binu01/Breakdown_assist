@@ -13,7 +13,7 @@ class _UserOrMechState extends State<UserOrMech> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blue.shade100,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -55,8 +55,8 @@ class _UserOrMechState extends State<UserOrMech> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5.0),
                   ),
-                backgroundColor: Colors.blueAccent,
-                foregroundColor: Colors.white
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black
               ),
                 onPressed: (){},
                 child: Text("User",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold))
@@ -70,14 +70,6 @@ class _UserOrMechState extends State<UserOrMech> {
           SizedBox(
             height: 150,
           ),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  foregroundColor:Colors.white,
-                backgroundColor: Colors.blueAccent
-
-              ),
-              onPressed: (){},
-              child: Text("Continue",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold))),
         ],
       ),
     );

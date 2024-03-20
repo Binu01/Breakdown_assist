@@ -21,7 +21,10 @@ class _Mech_HomeState extends State<Mech_Home> {
   
   
   Widget build(BuildContext context) {
-    return Scaffold(bottomNavigationBar: BottomNavigationBar(items:[
+    return Scaffold(bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.blue,
+        items:[
     BottomNavigationBarItem(
     icon: Icon(Icons.person),
     label: 'Request',
@@ -48,3 +51,7 @@ class _Mech_HomeState extends State<Mech_Home> {
     );
   }
 }
+
+
+
+

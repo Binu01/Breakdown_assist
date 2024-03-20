@@ -18,15 +18,20 @@ import 'Mechanic/Mech Service Home.dart';
 import 'Mechanic/Mech SignUP.dart';
 import 'Mechanic/Mech Status Completed.dart';
 import 'Mechanic/Mech profile.dart';
+import 'Mechanic/Tabs/Mech Home Service Accept Tab.dart';
+import 'Mechanic/Tabs/Mech Home Service Request Tab.dart';
 import 'Mechanic/Tabs/Request Tab.dart';
 import 'Mechanic/Tabs/Service Tab.dart';
 import 'Mechanic/mech  service accep or reject page.dart';
 import 'Mechanic/mech Status reject.dart';
+import 'User/Mechanic Failed Page.dart';
 import 'User/Tabs/User Mechanic List.dart';
 import 'User/User Home.dart';
 import 'User/User Login.dart';
 import 'User/User Mechanic Bill Page.dart';
+import 'User/User Mechanic Details Page.dart';
 import 'User/User Nofification.dart';
+import 'User/User Payment Page.dart';
 import 'User/User Profile.dart';
 import 'User/User Rating Page.dart';
 import 'User/User signup.dart';
@@ -43,7 +48,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: User_Mechanic_Bill_Page()
+      home: Splashscrn()
     );
   }
 }

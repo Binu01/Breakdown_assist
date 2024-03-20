@@ -20,6 +20,7 @@ class _User_Mechanic_Request_ListState extends State<User_Mechanic_Request_List>
             return Padding(
               padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
               child: Card(
+                color: Colors.blue.shade200,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [

@@ -119,7 +119,7 @@ class _AdminUserState extends State<AdminUser> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5)
                             ),
-                            backgroundColor: Colors.green,
+                            backgroundColor: Colors.green.shade300,
                             foregroundColor: Colors.white
                         ),
                         onPressed: (){},
@@ -132,7 +132,7 @@ class _AdminUserState extends State<AdminUser> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5)
                       ),
-                      backgroundColor: Colors.red,
+                      backgroundColor: Colors.red.shade300,
                         foregroundColor: Colors.white
                     ),
                     onPressed: (){},

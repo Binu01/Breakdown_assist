@@ -12,7 +12,7 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
   Widget build(BuildContext context) {
     return  Scaffold(
 
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blue.shade200,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,8 +44,11 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10)
                   ),
                   hintText: 'Username',
                 ),
@@ -66,8 +69,11 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10)
                   ),
                   hintText: 'Phone Number',
                 ),
@@ -85,8 +91,11 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10)
                   ),
                   hintText: 'Enter Email',
                 ),
@@ -107,8 +116,11 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10)
                   ),
                   hintText: 'Work Experience',
                 ),
@@ -130,8 +142,11 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10)
                   ),
                   hintText: 'Work shop Name',
                 ),
@@ -153,8 +168,11 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
               child: TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10)
                   ),
                   hintText: 'Password',
                 ),

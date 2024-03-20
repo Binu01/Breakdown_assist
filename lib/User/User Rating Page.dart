@@ -13,6 +13,7 @@ class _User_Rating_PageState extends State<User_Rating_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.blue.shade200,
         centerTitle: true,

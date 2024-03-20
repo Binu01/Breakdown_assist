@@ -12,7 +12,7 @@ class _User_SignUpState extends State<User_SignUp> {
   Widget build(BuildContext context) {
     return  Scaffold(
 
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blue.shade200,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,8 +44,11 @@ class _User_SignUpState extends State<User_SignUp> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10)
                   ),
                   hintText: 'Username',
                 ),
@@ -66,8 +69,11 @@ class _User_SignUpState extends State<User_SignUp> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10)
                   ),
                   hintText: 'Phone Number',
                 ),
@@ -88,8 +94,11 @@ class _User_SignUpState extends State<User_SignUp> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10)
                   ),
                   hintText: 'Enter Email',
                 ),
@@ -110,8 +119,11 @@ class _User_SignUpState extends State<User_SignUp> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(10)
                   ),
                   hintText: 'Enter Your Password',
                 ),

@@ -25,7 +25,7 @@ Navigator.pushReplacement(context,
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CupertinoColors.systemGrey2,
+      backgroundColor: Colors.blue.shade100,
       body: Center(
         child: Container(
           height: 300,

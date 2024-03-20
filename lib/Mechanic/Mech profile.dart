@@ -11,6 +11,7 @@ class _Mech_ProfileState extends State<Mech_Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -33,17 +34,20 @@ class _Mech_ProfileState extends State<Mech_Profile> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Name",style: TextStyle(fontSize: 20),),
                   ),
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Name"
                   ),
@@ -55,17 +59,20 @@ class _Mech_ProfileState extends State<Mech_Profile> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Username",style: TextStyle(fontSize: 20),),
                   ),
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Username"
                   ),
@@ -77,17 +84,20 @@ class _Mech_ProfileState extends State<Mech_Profile> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Phone Number",style: TextStyle(fontSize: 20),),
                   ),
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Phone Number"
                   ),
@@ -99,7 +109,7 @@ class _Mech_ProfileState extends State<Mech_Profile> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Email",style: TextStyle(fontSize: 20),),
                   ),
                 ],
@@ -108,11 +118,14 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                 height: 10,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Enter Email"
                   ),
@@ -124,17 +137,20 @@ class _Mech_ProfileState extends State<Mech_Profile> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Work Experience",style: TextStyle(fontSize: 20),),
                   ),
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Enter Work Experience"
                   ),
@@ -146,17 +162,20 @@ class _Mech_ProfileState extends State<Mech_Profile> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Workshop Name",style: TextStyle(fontSize: 20),),
                   ),
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Enter Your Shop Name"
                   ),
@@ -168,17 +187,20 @@ class _Mech_ProfileState extends State<Mech_Profile> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Your Location",style: TextStyle(fontSize: 20),),
                   ),
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue.shade100,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)
                       ),
                       hintText: "Enter Your Location"
                   ),
