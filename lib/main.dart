@@ -1,42 +1,13 @@
-import 'package:breakdown_assist/Splash.dart';
-import 'package:breakdown_assist/user%20or%20mech%20page.dart';
+import 'package:breakdown_assist/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
 import 'Admin/Admin Add Notification.dart';
-import 'Admin/Admin Mechanic.dart';
-import 'Admin/Admin user.dart';
-import 'Admin/Admin_home.dart';
 import 'Admin/admin login.dart';
-import 'Admin/tabs/Mechanic list.dart';
-import 'Admin/tabs/User_list.dart';
-import 'Admin/tabs/home.dart';
-import 'Mechanic/Mech Add service.dart';
-import 'Mechanic/Mech Edit Profile.dart';
-import 'Mechanic/Mech Login.dart';
-import 'Mechanic/Mech Notification.dart';
-import 'Mechanic/Mech Service Home.dart';
-import 'Mechanic/Mech SignUP.dart';
-import 'Mechanic/Mech Status Completed.dart';
-import 'Mechanic/Mech profile.dart';
-import 'Mechanic/Tabs/Mech Home Service Accept Tab.dart';
-import 'Mechanic/Tabs/Mech Home Service Request Tab.dart';
-import 'Mechanic/Tabs/Request Tab.dart';
-import 'Mechanic/Tabs/Service Tab.dart';
-import 'Mechanic/mech  service accep or reject page.dart';
-import 'Mechanic/mech Status reject.dart';
-import 'User/Mechanic Failed Page.dart';
-import 'User/Tabs/User Mechanic List.dart';
-import 'User/User Home.dart';
-import 'User/User Login.dart';
-import 'User/User Mechanic Bill Page.dart';
-import 'User/User Mechanic Details Page.dart';
-import 'User/User Nofification.dart';
-import 'User/User Payment Page.dart';
-import 'User/User Profile.dart';
-import 'User/User Rating Page.dart';
 import 'User/User signup.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -48,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splashscrn()
+      home: Admin_login()
     );
   }
 }

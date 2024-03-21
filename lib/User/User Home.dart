@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'Tabs/User Mechanic Request List.dart';
+import 'User Nofification.dart';
 
 class User_Home extends StatefulWidget {
   const User_Home({super.key});
@@ -43,9 +44,14 @@ class _User_HomeState extends State<User_Home> {
             ),
           ),
           actions: [
-            Icon(
-                color: Colors.amber,
-                CupertinoIcons.bell_fill),
+           IconButton(onPressed: (){
+             Navigator.push(context, MaterialPageRoute(builder: (context)=>User_Notification()));
+           },
+               icon: Icon(
+                 CupertinoIcons.bell_fill,
+                 color: Colors.amber,
+               )
+           ),
             SizedBox(
               width: 10,
             )

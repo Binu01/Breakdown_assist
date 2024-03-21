@@ -8,6 +8,10 @@ class Mech_Login extends StatefulWidget {
 }
 
 class _Mech_LoginState extends State<Mech_Login> {
+
+  final Snack = SnackBar(content: Text("Successfully Logged in"));
+  final _key = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,7 +115,13 @@ class _Mech_LoginState extends State<Mech_Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("Do you have account ?"),
-                TextButton(onPressed: (){},
+                TextButton(onPressed: (){
+
+                  if (_key.currentState!.validate()) {
+                    ScaffoldMessenger.of(context).showSnackBar(Snack);
+                  }
+
+                },
                     child: Text("SignUp",style: TextStyle(color: Colors.blue),))
               ],
             ),

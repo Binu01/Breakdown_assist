@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Admin Add Notification.dart';
+
 class NotificationTab extends StatefulWidget {
   const NotificationTab({super.key});
 
@@ -17,7 +19,9 @@ class _NotificationTabState extends State<NotificationTab> {
           borderRadius: BorderRadius.circular(30)
         ),
         backgroundColor: Colors.white,
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>AddNotification()));
+        },
           child: Icon(
               size: 50,
               Icons.add),
