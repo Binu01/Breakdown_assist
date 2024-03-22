@@ -28,7 +28,7 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
       'password': passctrl.text,
       'status': 0,
     }).then((value) {
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>Mech_Login()));
+      // Navigator.push(context, MaterialPageRoute(builder: (context)=>Mech_Login()));
     }
     );
     print("done");

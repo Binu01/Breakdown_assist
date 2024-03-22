@@ -23,7 +23,7 @@ class _User_SignUpState extends State<User_SignUp> {
       'password': passctrl.text,
       'status': 0,
     }).then((value){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>User_Login()));
+       Navigator.push(context, MaterialPageRoute(builder: (context)=>User_Login()));
     });
     print("done");
   }
@@ -222,7 +222,6 @@ class _User_SignUpState extends State<User_SignUp> {
                         UserSignup();
                         ScaffoldMessenger.of(context).showSnackBar(Snack);
                       }
-
                     },
                     child: Text(
                       "SignUp",

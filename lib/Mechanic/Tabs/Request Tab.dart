@@ -1,3 +1,4 @@
+import 'package:breakdown_assist/Mechanic/Mech%20Notification.dart';
 import 'package:breakdown_assist/Mechanic/Tabs/Mech%20Home%20Service%20Accept%20Tab.dart';
 import 'package:breakdown_assist/Mechanic/Tabs/Mech%20Home%20Service%20Request%20Tab.dart';
 import 'package:flutter/cupertino.dart';
@@ -29,7 +30,9 @@ class _Request_TabState extends State<Request_Tab> {
           actions: [
             IconButton(
                 color: Colors.yellow.shade700,
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Mech_Notification()));
+                },
                 icon: Icon(CupertinoIcons.bell_fill))
           ],
         ),

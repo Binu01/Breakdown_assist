@@ -29,8 +29,8 @@ Navigator.pushReplacement(context,
       body: Center(
         child: Container(
           height: 300,
-          width: 400,
-          child: Image.asset("Assets/Splash_img.jpg"),
+          width: 330,
+          child: Image.asset("Assets/splash img 1.jpg"),
         ),
       ),
     );

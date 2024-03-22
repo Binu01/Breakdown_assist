@@ -20,7 +20,7 @@ class _UserOrMechState extends State<UserOrMech> {
           Container(
             height: 200,
             width: 400,
-            child: Image.asset("Assets/userORmech img.jpg"),
+            child: Image.asset("Assets/login page img.jpg"),
           ),
           SizedBox(
             height: 20,

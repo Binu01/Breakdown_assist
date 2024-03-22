@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../Admin Add Notification.dart';
@@ -26,42 +27,59 @@ class _NotificationTabState extends State<NotificationTab> {
               size: 50,
               Icons.add),
       ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-              vertical: 20,
-              horizontal: 5
-          ),
-          child: ListView.builder(
-              itemCount: 2,
-              itemBuilder: (context,index){
-                return Card(
-                  color: Colors.white,
-                  child:Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 10,
+        body: FutureBuilder(
+          future: FirebaseFirestore.instance.collection('notifications').get(),
+          builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting){
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+            if(snapshot.hasError){
+              return Center(
+                child: Text("Error:${snapshot.error}"),
+              );
+            }
+            final _notification = snapshot.data?.docs??[];
+            return Padding(
+              padding: const EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 5
+              ),
+              child: ListView.builder(
+                  itemCount: _notification.length,
+                  itemBuilder: (context,index){
+                    return Card(
+                      color: Colors.white,
+                      child:Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            child: Text(_notification[index]['matter'],style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            child: Text(_notification[index]['content'],style: TextStyle(fontSize: 20),),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                        ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                        child: Text("Heading",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                        child: Text("Content",style: TextStyle(fontSize: 20),),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                    ],
-                  ),
-                );
-              }
-          ),
+                    );
+                  }
+              ),
+            );
+          },
+
         ),
     );
   }
