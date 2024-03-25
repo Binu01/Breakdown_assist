@@ -16,10 +16,10 @@ class _User_ProfileState extends State<User_Profile> {
         child: Center(
           child: Column(
             children: [
-              SizedBox(
+               SizedBox(
                 height: 70,
               ),
-              Column(
+               Column(
                 children: [
                   Row(
                     children: [
@@ -34,11 +34,11 @@ class _User_ProfileState extends State<User_Profile> {
                   ),
                 ],
               ),
-              SizedBox(
+               SizedBox(
                 height: 70,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 175, 0),
+               Padding(
+                padding: EdgeInsets.fromLTRB(0, 0, 175, 0),
                 child: Text("Enter Your Name",style: TextStyle(fontSize: 20),),
               ),
               Padding(
@@ -55,11 +55,11 @@ class _User_ProfileState extends State<User_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 100, 0),
+               Padding(
+                padding: EdgeInsets.fromLTRB(0, 0, 100, 0),
                 child: Text(
                   maxLines: 1,
                   "Enter Your Phone Number",style: TextStyle(fontSize: 20),),
@@ -78,11 +78,11 @@ class _User_ProfileState extends State<User_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 175, 0),
+               Padding(
+                padding: EdgeInsets.fromLTRB(0, 0, 175, 0),
                 child: Text("Enter Your Email",style: TextStyle(fontSize: 20),),
               ),
               Padding(
@@ -99,12 +99,12 @@ class _User_ProfileState extends State<User_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 170,
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    fixedSize: Size(150, 40),
+                    fixedSize:  Size(150, 40),
                       backgroundColor: Colors.blue,
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
@@ -112,7 +112,7 @@ class _User_ProfileState extends State<User_Profile> {
                       )
                   ),
                   onPressed: (){},
-                  child: Text("Done",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),))
+                  child:  Text("Done",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),))
             ],
           ),
         ),

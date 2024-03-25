@@ -16,33 +16,33 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
         child: Center(
           child: Column(
             children: [
-              SizedBox(
+               SizedBox(
                 height: 50,
               ),
               Column(
                 children: [
                   Row(
                     children: [
-                      SizedBox(
+                       SizedBox(
                         width: 120,
                       ),
-                      CircleAvatar(
+                       CircleAvatar(
                         radius: 60,
                         backgroundImage: AssetImage("Assets/profile img.png"),
                       ),
-                      SizedBox(
+                       SizedBox(
                         width: 50,
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
                         child: IconButton(onPressed: (){},
-                            icon: Icon(Icons.edit)),
+                            icon:  Icon(Icons.edit)),
                       )
                     ],
                   ),
                 ],
               ),
-              SizedBox(
+               SizedBox(
                 height: 20,
               ),
               Padding(
@@ -59,7 +59,7 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
 
@@ -77,7 +77,7 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
 
@@ -95,7 +95,7 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
               Padding(
@@ -112,7 +112,7 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
 
@@ -130,7 +130,7 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
 
@@ -148,7 +148,7 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
 
@@ -166,12 +166,12 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 60,
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    fixedSize: Size(150, 30),
+                    fixedSize:  Size(150, 30),
                       backgroundColor: Colors.blue,
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
@@ -179,7 +179,7 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                       )
                   ),
                   onPressed: (){},
-                  child: Text("Done",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),))
+                  child:  Text("Done",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),))
             ],
           ),
         ),

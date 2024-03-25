@@ -11,12 +11,14 @@ class _User_Mechanic_ListState extends State<User_Mechanic_List> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       backgroundColor: Colors.white,
       body: ListView.separated(
-          separatorBuilder: (context,index)=> Divider(thickness: 5,color: Colors.white,),
+          separatorBuilder: (context, index) => Divider(
+                thickness: 5,
+                color: Colors.white,
+              ),
           itemCount: 2,
-          itemBuilder:  (BuildContext context,int index){
+          itemBuilder: (BuildContext context, int index) {
             return Padding(
               padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
               child: Card(
@@ -35,28 +37,33 @@ class _User_Mechanic_ListState extends State<User_Mechanic_List> {
                           backgroundImage: AssetImage("Assets/profile img.png"),
                           radius: 40,
                         ),
-                        Text("Name",style: TextStyle(fontSize: 20))
+                        Text("Name", style: TextStyle(fontSize: 20))
                       ],
                     ),
-                   Spacer(),
+                    Spacer(),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("+1 Year Experience",style: TextStyle(fontSize: 20),),
+                        Text(
+                          "+1 Year Experience",
+                          style: TextStyle(fontSize: 20),
+                        ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text("Fuel Leacking",style: TextStyle(fontSize: 20)),
+                        Text("Fuel Leacking", style: TextStyle(fontSize: 20)),
                         SizedBox(
                           height: 10,
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.red.shade400,
-                            borderRadius: BorderRadius.circular(10)
-                          ),
+                              color: Colors.red.shade400,
+                              borderRadius: BorderRadius.circular(10)),
                           child: Center(
-                              child: Text("Available",style: TextStyle(fontSize: 20,color: Colors.white),)),
+                              child: Text(
+                            "Available",
+                            style: TextStyle(fontSize: 20, color: Colors.white),
+                          )),
                         ),
                       ],
                     ),
@@ -65,9 +72,7 @@ class _User_Mechanic_ListState extends State<User_Mechanic_List> {
                 ),
               ),
             );
-          }
-      ),
+          }),
     );
   }
 }
-

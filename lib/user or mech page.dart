@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class UserOrMech extends StatefulWidget {
   const UserOrMech({super.key});
@@ -17,7 +15,7 @@ class _UserOrMechState extends State<UserOrMech> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             height: 200,
             width: 400,
             child: Image.asset("Assets/login page img.jpg"),
@@ -25,48 +23,56 @@ class _UserOrMechState extends State<UserOrMech> {
           SizedBox(
             height: 20,
           ),
-          Text("Who Are You",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-        SizedBox(
-          height: 20,
-        ),
-        Container(
-          height: 50,
-          width: 300,
-          child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
-                  ),
-                  backgroundColor: Colors.blueAccent,
-                  foregroundColor:Colors.white
-              ),
-              onPressed: (){},
-              child: Text("Mechanic",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold))
+          Text(
+            "Who Are You",
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
           ),
-        ),
           SizedBox(
             height: 20,
           ),
-          Container(
+          SizedBox(
             height: 50,
             width: 300,
             child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
-                  ),
-                backgroundColor: Colors.white,
-                foregroundColor: Colors.black
-              ),
-                onPressed: (){},
-                child: Text("User",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold))
-            ),
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    backgroundColor: Colors.blueAccent,
+                    foregroundColor: Colors.white),
+                onPressed: () {},
+                child: Text("Mechanic",
+                    style:
+                        TextStyle(fontSize: 30, fontWeight: FontWeight.bold))),
           ),
           SizedBox(
             height: 20,
           ),
-      TextButton(onPressed: (){},
-          child: Text("Admin Login",style: TextStyle(color: Colors.blueAccent,fontSize: 25,fontWeight: FontWeight.bold))),
+          SizedBox(
+            height: 50,
+            width: 300,
+            child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black),
+                onPressed: () {},
+                child: Text("User",
+                    style:
+                        TextStyle(fontSize: 25, fontWeight: FontWeight.bold))),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          TextButton(
+              onPressed: () {},
+              child: Text("Admin Login",
+                  style: TextStyle(
+                      color: Colors.blueAccent,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold))),
           SizedBox(
             height: 150,
           ),

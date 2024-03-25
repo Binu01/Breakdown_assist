@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'Admin_home.dart';
@@ -14,14 +13,14 @@ class _Admin_loginState extends State<Admin_login> {
 
   var userctrl = TextEditingController();
   var passctrl = TextEditingController();
-  final Snack = SnackBar(
+  final Snack =  SnackBar(
       duration: Duration(seconds: 3),
       content: Text("Successfully Logged in"));
   final _Key = GlobalKey<FormState>();
 
   Login(){
     if (userctrl.text == 'admin@gmail.com' && passctrl.text == '123456'){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Admin_home()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Admin_home()));
     }
   }
 
@@ -35,29 +34,29 @@ class _Admin_loginState extends State<Admin_login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
+               SizedBox(
                 height: 75,
               ),
               Container(
                 height: 200,
                 width: 400,
-                decoration: BoxDecoration(
+                decoration:  BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("Assets/userORmech img.jpg"))
                 ),
                 // child: Image.asset("Assets/userORmech img.jpg"),
               ),
-              SizedBox(
+               SizedBox(
                 height: 20,
               ),
-              Text("LOGIN",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
-              SizedBox(
+               Text("LOGIN",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
+               SizedBox(
                 height: 20,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                     child: Text("Enter Username",style: TextStyle(fontSize: 25),),
                   ),
                 ],
@@ -85,13 +84,13 @@ class _Admin_loginState extends State<Admin_login> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 20,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                     child: Text("Enter Password",style: TextStyle(fontSize: 25),),
                   ),
                 ],
@@ -120,10 +119,10 @@ class _Admin_loginState extends State<Admin_login> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 120,
               ),
-              Container(
+              SizedBox(
                 height: 50,
                 width: 150,
                 child: ElevatedButton(
@@ -140,7 +139,7 @@ class _Admin_loginState extends State<Admin_login> {
                         ScaffoldMessenger.of(context).showSnackBar(Snack);
                       }
                     },
-                    child: Text("Login",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)
+                    child:  Text("Login",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)
                 ),
               ),
             ],

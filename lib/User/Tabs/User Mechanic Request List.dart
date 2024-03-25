@@ -14,7 +14,7 @@ class _User_Mechanic_Request_ListState extends State<User_Mechanic_Request_List>
 
       backgroundColor: Colors.white,
       body: ListView.separated(
-          separatorBuilder: (context,index)=> Divider(thickness: 5,color: Colors.white,),
+          separatorBuilder: (context,index)=>  Divider(thickness: 5,color: Colors.white,),
           itemCount: 2,
           itemBuilder:  (BuildContext context,int index){
             return Padding(
@@ -24,10 +24,10 @@ class _User_Mechanic_Request_ListState extends State<User_Mechanic_Request_List>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(
+                     SizedBox(
                       width: 10,
                     ),
-                    Column(
+                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("Name",style: TextStyle(fontSize: 20)),
@@ -36,7 +36,7 @@ class _User_Mechanic_Request_ListState extends State<User_Mechanic_Request_List>
                         Text("Fuel Leaking",style: TextStyle(fontSize: 20),),
                       ],
                     ),
-                    SizedBox(
+                     SizedBox(
                       width: 20,
                     ),
                     Container(
@@ -45,7 +45,7 @@ class _User_Mechanic_Request_ListState extends State<User_Mechanic_Request_List>
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.red
                       ),
-                      child: Text("Approved",style: TextStyle(color: Colors.white,fontSize: 20,),),
+                      child:  Text("Approved",style: TextStyle(color: Colors.white,fontSize: 20,),),
                     )
                   ],
                 ),

@@ -14,7 +14,7 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue.shade200,
-        title: Text("Needed Service"),
+        title:  Text("Needed Service"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -22,26 +22,26 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(
+               SizedBox(
                 height: 30,
               ),
-              CircleAvatar(
+               CircleAvatar(
                 radius: 60,
                 backgroundImage: AssetImage("Assets/profile img.png"),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Text("Name",style: TextStyle(fontSize: 25),),
-              SizedBox(
+               Text("Name",style: TextStyle(fontSize: 25),),
+               SizedBox(
                 height: 10,
               ),
-              Text("Contact Number",style: TextStyle(fontSize: 20)),
-              SizedBox(
+               Text("Contact Number",style: TextStyle(fontSize: 20)),
+               SizedBox(
                 height: 5,
               ),
-              Text("+2 Year Experience",style: TextStyle(fontSize: 20),),
-              SizedBox(
+               Text("+2 Year Experience",style: TextStyle(fontSize: 20),),
+               SizedBox(
                 height: 10,
               ),
               Container(
@@ -50,16 +50,16 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
                   border: Border.all(color: Colors.white),
                   color: Colors.green.shade400,
                 ),
-                child: Text("Available",style: TextStyle(color: Colors.white,fontSize: 20),),
+                child:  Text("Available",style: TextStyle(color: Colors.white,fontSize: 20),),
               ),
-              SizedBox(
+               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 130, 0),
+               Padding(
+                padding: EdgeInsets.fromLTRB(0, 0, 130, 0),
                 child: Text("Add Needed Service",style: TextStyle(fontSize: 20)),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
               Row(
@@ -75,19 +75,16 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
                       padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                       child: DropdownButton(
                         isExpanded: true,
-                        icon: Icon(Icons.keyboard_arrow_down_outlined),
+                        icon:  Icon(Icons.keyboard_arrow_down_outlined),
                         iconSize: 35,
-                        style: TextStyle(fontSize: 20,color: Colors.black),
+                        style:  TextStyle(fontSize: 20,color: Colors.black),
                           value: select,
-                          items:[
-                            DropdownMenuItem(child: Text("Fuel Leacking"),
-                            value: 0,
+                          items: [
+                            DropdownMenuItem(value: 0,child: Text("Fuel Leacking"),
                             ),
-                            DropdownMenuItem(child: Text("Service"),
-                            value: 1,
+                            DropdownMenuItem(value: 1,child: Text("Service"),
                             ),
-                            DropdownMenuItem(child: Text("Fuel Leacking"),
-                            value: 2,
+                            DropdownMenuItem(value: 2,child: Text("Fuel Leacking"),
                             ),
                       ] ,
                           onChanged: (value){
@@ -101,19 +98,19 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
                   ),
 
                   IconButton(onPressed: (){},
-                      icon: Icon(
+                      icon:  Icon(
                           size: 35,
                           Icons.add_circle_rounded))
                 ],
               ),
-              SizedBox(
+               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 250, 0),
+               Padding(
+                padding: EdgeInsets.fromLTRB(0, 0, 250, 0),
                 child: Text("Place",style: TextStyle(fontSize: 20),),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
               Container(
@@ -126,21 +123,21 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                   child: TextFormField(
-                    style: TextStyle(fontSize: 20),
+                    style:  TextStyle(fontSize: 20),
                     maxLines: 5,
-                    decoration: InputDecoration(
+                    decoration:  InputDecoration(
                       border: InputBorder.none,
                       hintText: "Enter Place"
                     ),
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 70,
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      fixedSize: Size(180, 30),
+                      fixedSize:  Size(180, 30),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)
                       ),
@@ -148,7 +145,7 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
                       foregroundColor: Colors.white
                   ),
                   onPressed: (){},
-                  child: Text("Request",style: TextStyle(fontSize: 20),))
+                  child:  Text("Request",style: TextStyle(fontSize: 20),))
             ],
           ),
         ),

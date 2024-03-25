@@ -9,7 +9,7 @@ class Mech_Login extends StatefulWidget {
 
 class _Mech_LoginState extends State<Mech_Login> {
 
-  final Snack = SnackBar(content: Text("Successfully Logged in"));
+  final Snack =  SnackBar(content: Text("Successfully Logged in"));
   final _key = GlobalKey<FormState>();
 
   @override
@@ -21,25 +21,25 @@ class _Mech_LoginState extends State<Mech_Login> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
+             SizedBox(
               height: 75,
             ),
-            Container(
+            SizedBox(
               height: 200,
               width: 400,
               child: Image.asset("Assets/userORmech img.jpg"),
             ),
-            SizedBox(
+             SizedBox(
               height: 20,
             ),
-            Text("LOGIN",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
-            SizedBox(
+             Text("LOGIN",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
+             SizedBox(
               height: 20,
             ),
-            Row(
+             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                  padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                   child: Text("Enter Username",style: TextStyle(fontSize: 25),),
                 ),
               ],
@@ -58,13 +58,13 @@ class _Mech_LoginState extends State<Mech_Login> {
                 ),
               ),
             ),
-            SizedBox(
+             SizedBox(
               height: 20,
             ),
-            Row(
+             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                  padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                   child: Text("Enter Password",style: TextStyle(fontSize: 25),),
                 ),
               ],
@@ -87,13 +87,13 @@ class _Mech_LoginState extends State<Mech_Login> {
             Padding(
               padding: const EdgeInsets.fromLTRB(150, 0, 0, 0),
               child: TextButton(onPressed: (){},
-                  child: Text("Forgot Password?",style: TextStyle(fontSize: 15,color: Colors.blue),)),
+                  child:  Text("Forgot Password?",style: TextStyle(fontSize: 15,color: Colors.blue),)),
             ),
 
-            SizedBox(
+             SizedBox(
               height: 50,
             ),
-            Container(
+            SizedBox(
               height: 50,
               width: 150,
               child: ElevatedButton(
@@ -105,16 +105,16 @@ class _Mech_LoginState extends State<Mech_Login> {
                       foregroundColor:Colors.white
                   ),
                   onPressed: (){},
-                  child: Text("Login",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)
+                  child: const Text("Login",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)
               ),
             ),
-            SizedBox(
+             SizedBox(
               height: 20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Do you have account ?"),
+                 Text("Do you have account ?"),
                 TextButton(onPressed: (){
 
                   if (_key.currentState!.validate()) {
@@ -122,7 +122,7 @@ class _Mech_LoginState extends State<Mech_Login> {
                   }
 
                 },
-                    child: Text("SignUp",style: TextStyle(color: Colors.blue),))
+                    child:  Text("SignUp",style: TextStyle(color: Colors.blue),))
               ],
             ),
           ],

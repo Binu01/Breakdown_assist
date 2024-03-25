@@ -1,5 +1,4 @@
 import 'package:breakdown_assist/user%20or%20mech%20page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Splashscrn extends StatefulWidget {
@@ -10,15 +9,16 @@ class Splashscrn extends StatefulWidget {
 }
 
 class _SplashscrnState extends State<Splashscrn> {
+  @override
   void initState() {
      //TODO: implement initState
     super.initState();
     Tohome();
   }
 Tohome()async{
-  await Future.delayed(Duration(seconds: 3),(){});
+  await Future.delayed( Duration(seconds: 3),(){});
 Navigator.pushReplacement(context,
-    MaterialPageRoute(builder: (context)=>UserOrMech())
+    MaterialPageRoute(builder: (context)=> UserOrMech())
 );
 
 }
@@ -27,7 +27,7 @@ Navigator.pushReplacement(context,
     return Scaffold(
       backgroundColor: Colors.blue.shade100,
       body: Center(
-        child: Container(
+        child: SizedBox(
           height: 300,
           width: 330,
           child: Image.asset("Assets/splash img 1.jpg"),

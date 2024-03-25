@@ -21,8 +21,8 @@ class _Request_TabState extends State<Request_Tab> {
         backgroundColor: Colors.white,
         appBar: AppBar(
         backgroundColor: Colors.white,
-          leading: Padding(
-            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+          leading:  Padding(
+            padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
             child: CircleAvatar(
               backgroundImage: AssetImage("Assets/profile img.png"),
             ),
@@ -31,14 +31,14 @@ class _Request_TabState extends State<Request_Tab> {
             IconButton(
                 color: Colors.yellow.shade700,
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Mech_Notification()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const Mech_Notification()));
                 },
-                icon: Icon(CupertinoIcons.bell_fill))
+                icon:  Icon(CupertinoIcons.bell_fill))
           ],
         ),
         body: Column(
           children: [
-            SizedBox(
+             SizedBox(
               height: 10,
             ),
             Padding(
@@ -54,20 +54,20 @@ class _Request_TabState extends State<Request_Tab> {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.blue.shade400
                     ),
-                    labelPadding: EdgeInsets.symmetric(horizontal: 20),
+                    labelPadding:  EdgeInsets.symmetric(horizontal: 20),
 // overlayColor: MaterialStateColor.transparent,
-                    tabs: [
-                      Tab(child: Text("User",style: TextStyle(fontSize: 20,color: Colors.black),),),
-                      Tab(child: Text("Mechanic",style: TextStyle(fontSize: 20,color: Colors.black)),),
+                    tabs:  [
+                      Tab(child: Text("Request",style: TextStyle(fontSize: 20,color: Colors.black),),),
+                      Tab(child: Text("Accept",style: TextStyle(fontSize: 20,color: Colors.black)),),
                     ]
                 ),
               ),
             ),
-            SizedBox(
+             SizedBox(
               height: 10,
             ),
 
-            Expanded(
+             Expanded(
               child: TabBarView(
                   children: [
                     Mech_Req_Tab(),
@@ -78,11 +78,7 @@ class _Request_TabState extends State<Request_Tab> {
           ],
         ),
 
-        // TabBarView(children: [
-        //   Mech_Req_Tab(),
-        //   Mech_Accept_Tab(),
-        //
-        // ]),
+
       ),
     );
   }

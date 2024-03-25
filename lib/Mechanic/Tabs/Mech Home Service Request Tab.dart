@@ -13,14 +13,14 @@ class _Mech_Req_TabState extends State<Mech_Req_Tab> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: ListView.separated(
-          separatorBuilder: (context,index)=> Divider(thickness: 5,color: Colors.white,),
+          separatorBuilder: (context,index)=>  Divider(thickness: 5,color: Colors.white,),
           itemCount: 2,
           itemBuilder:  (BuildContext context,int index){
         return Padding(
-          padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
+          padding:  EdgeInsets.fromLTRB(10, 5, 10, 0),
           child: Card(
             color: Colors.blue.shade200,
-            child: Row(
+            child:  Row(
               children: [
                 SizedBox(
                   width: 10,

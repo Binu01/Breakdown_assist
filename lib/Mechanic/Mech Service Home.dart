@@ -14,17 +14,18 @@ class _Mech_HomeState extends State<Mech_Home> {
   @override
   int indexNum = 0;
   List Tabs = [
-    Request_Tab(),
-    Service_Tab(),
-    Rating_Tab(),
+     Request_Tab(),
+     Service_Tab(),
+     Rating_Tab(),
   ];
   
   
+  @override
   Widget build(BuildContext context) {
     return Scaffold(bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         selectedItemColor: Colors.blue,
-        items:[
+        items: [
     BottomNavigationBarItem(
     icon: Icon(Icons.person),
     label: 'Request',

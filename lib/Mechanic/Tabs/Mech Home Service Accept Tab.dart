@@ -14,7 +14,7 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
 
       backgroundColor: Colors.white,
       body: ListView.separated(
-          separatorBuilder: (context,index)=> Divider(thickness: 5,color: Colors.white,),
+          separatorBuilder: (context,index)=>  Divider(thickness: 5,color: Colors.white,),
           itemCount: 2,
           itemBuilder:  (BuildContext context,int index){
             return Padding(
@@ -23,10 +23,10 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                 color: Colors.blue.shade200,
                 child: Row(
                   children: [
-                    SizedBox(
+                     SizedBox(
                       width: 10,
                     ),
-                    Column(
+                     Column(
                       children: [
                         SizedBox(
                           height: 5,
@@ -38,10 +38,10 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                         Text("Name",style: TextStyle(fontSize: 20))
                       ],
                     ),
-                    SizedBox(
+                     SizedBox(
                       width: 20,
                     ),
-                    Column(
+                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text("Fuel Leaking",style: TextStyle(fontSize: 20),),
@@ -55,7 +55,7 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                         border: Border.all(color: Colors.red),
                         color: Colors.red
                       ),
-                      child: Text("Payment pending",style: TextStyle(color: Colors.white,fontSize: 15,),),
+                      child:  Text("Payment pending",style: TextStyle(color: Colors.white,fontSize: 15,),),
                     )
                   ],
                 ),

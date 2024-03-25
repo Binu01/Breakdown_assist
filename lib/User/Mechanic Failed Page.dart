@@ -16,29 +16,29 @@ class _Mech_failed_pageState extends State<Mech_failed_page> {
       appBar: AppBar(
         backgroundColor: Colors.blue.shade200,
         centerTitle: true,
-        title: Text("Failed Project",style: TextStyle(fontSize: 25),),
+        title:  Text("Failed Project",style: TextStyle(fontSize: 25),),
       ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(
+               SizedBox(
                 height: 30,
               ),
-              CircleAvatar(
+               CircleAvatar(
                 radius: 60,
                 backgroundImage: AssetImage("Assets/profile img.png"),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Text("Name",style: TextStyle(fontSize: 25),),
-              SizedBox(
+               Text("Name",style: TextStyle(fontSize: 25),),
+               SizedBox(
                 height: 10,
               ),
-              Text("+2 Year Experience",style: TextStyle(fontSize: 20),),
-              SizedBox(
+               Text("+2 Year Experience",style: TextStyle(fontSize: 20),),
+               SizedBox(
                 height: 10,
               ),
               Container(
@@ -47,15 +47,15 @@ class _Mech_failed_pageState extends State<Mech_failed_page> {
                   border: Border.all(color: Colors.white),
                   color: Colors.green.shade400,
                 ),
-                child: Text("Available",style: TextStyle(color: Colors.white,fontSize: 20),),
+                child:  Text("Available",style: TextStyle(color: Colors.white,fontSize: 20),),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
+                   SizedBox(
                     width: 10,
                   ),
                   RatingBar.builder(
@@ -65,7 +65,7 @@ class _Mech_failed_pageState extends State<Mech_failed_page> {
                     allowHalfRating: true,
                     itemCount: 5,
                     itemBuilder: (context, _) =>
-                        Icon(
+                         Icon(
                           Icons.star,
                           color: Colors.amber,
                         ),
@@ -75,21 +75,21 @@ class _Mech_failed_pageState extends State<Mech_failed_page> {
                         }
                         ),
                   ),
-                  SizedBox(
+                   SizedBox(
                     width: 10,
                   ),
                   IconButton(onPressed: (){},
-                      icon: Icon(Icons.edit))
+                      icon:  Icon(Icons.edit))
                 ],
               ),
-              SizedBox(
+               SizedBox(
                 height: 50,
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 150, 0),
+               Padding(
+                padding: EdgeInsets.fromLTRB(0, 0, 150, 0),
                 child: Text("Failed Reason",style: TextStyle(fontSize: 25),),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
               Container(
@@ -105,20 +105,20 @@ class _Mech_failed_pageState extends State<Mech_failed_page> {
                   padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                   child: TextFormField(
                     maxLines: 5,
-                    style: TextStyle(fontSize: 20),
-                    decoration: InputDecoration(
+                    style:  TextStyle(fontSize: 20),
+                    decoration:  InputDecoration(
                       hintText: "Reason...",
                       border: InputBorder.none
                     ),
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 30,
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      fixedSize: Size(180, 30),
+                      fixedSize:  Size(180, 30),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)
                       ),
@@ -126,7 +126,7 @@ class _Mech_failed_pageState extends State<Mech_failed_page> {
                       foregroundColor: Colors.white
                   ),
                   onPressed: (){},
-                  child: Text("OK",style: TextStyle(fontSize: 20),))
+                  child:  Text("OK",style: TextStyle(fontSize: 20),))
             ],
           ),
         ),

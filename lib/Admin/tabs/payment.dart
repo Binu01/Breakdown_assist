@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PaymentTab extends StatefulWidget {
@@ -21,10 +20,10 @@ class _PaymentTabState extends State<PaymentTab> {
         child: ListView.builder(
           itemCount: 5,
             itemBuilder: (context,index){
-            return Card(
+            return  Card(
               color: Colors.white,
               child:Padding(
-                padding: const EdgeInsets.fromLTRB(30, 5, 15, 5),
+                padding: EdgeInsets.fromLTRB(30, 5, 15, 5),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,

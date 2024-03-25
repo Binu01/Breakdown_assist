@@ -23,12 +23,12 @@ class _User_SignUpState extends State<User_SignUp> {
       'password': passctrl.text,
       'status': 0,
     }).then((value){
-       Navigator.push(context, MaterialPageRoute(builder: (context)=>User_Login()));
+       Navigator.push(context, MaterialPageRoute(builder: (context)=> User_Login()));
     });
     print("done");
   }
   final _key = GlobalKey<FormState>();
-  final Snack = SnackBar(
+  final Snack =  SnackBar(
       duration: Duration(seconds: 4),
       content: Text("Your Account was Successfully Created"));
 
@@ -42,28 +42,28 @@ class _User_SignUpState extends State<User_SignUp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
+               SizedBox(
                 height: 30,
               ),
-              Container(
+              SizedBox(
                 height: 200,
                 width: 400,
                 child: Image.asset("Assets/userORmech img.jpg"),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Text(
+               Text(
                 "Sign Up",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
               ),
-              SizedBox(
+               SizedBox(
                 height: 20,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                     child: Text(
                       "Enter Username",
                       style: TextStyle(fontSize: 20),
@@ -93,13 +93,13 @@ class _User_SignUpState extends State<User_SignUp> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                     child: Text(
                       "Enter Phone Number",
                       style: TextStyle(fontSize: 20),
@@ -130,13 +130,13 @@ class _User_SignUpState extends State<User_SignUp> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                     child: Text(
                       "Enter Your Email",
                       style: TextStyle(fontSize: 20),
@@ -166,13 +166,13 @@ class _User_SignUpState extends State<User_SignUp> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                     child: Text(
                       "Enter Your Password",
                       style: TextStyle(fontSize: 20),
@@ -203,10 +203,10 @@ class _User_SignUpState extends State<User_SignUp> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 50,
               ),
-              Container(
+              SizedBox(
                 height: 50,
                 width: 150,
                 child: ElevatedButton(
@@ -223,7 +223,7 @@ class _User_SignUpState extends State<User_SignUp> {
                         ScaffoldMessenger.of(context).showSnackBar(Snack);
                       }
                     },
-                    child: Text(
+                    child:  Text(
                       "SignUp",
                       style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                     )),

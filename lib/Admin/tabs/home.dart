@@ -1,8 +1,6 @@
 import 'package:breakdown_assist/Admin/tabs/Mechanic%20list.dart';
 import 'package:breakdown_assist/Admin/tabs/User_list.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -21,7 +19,7 @@ class _HomeTabState extends State<HomeTab>{
           backgroundColor: Colors.blue.shade200,
           body:Column(
             children: [
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
               Padding(
@@ -37,20 +35,20 @@ class _HomeTabState extends State<HomeTab>{
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.blue.shade400
                     ),
-                    labelPadding: EdgeInsets.symmetric(horizontal: 20),
+                    labelPadding:  EdgeInsets.symmetric(horizontal: 20),
                     // overlayColor: MaterialStateColor.transparent,
-                      tabs: [
+                      tabs:  [
                         Tab(child: Text("User",style: TextStyle(fontSize: 20,color: Colors.black),),),
                         Tab(child: Text("Mechanic",style: TextStyle(fontSize: 20,color: Colors.black)),),
                       ]
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
 
-              Expanded(
+               Expanded(
                 child: TabBarView(
 
                     children: [

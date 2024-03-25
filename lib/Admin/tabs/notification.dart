@@ -21,9 +21,9 @@ class _NotificationTabState extends State<NotificationTab> {
         ),
         backgroundColor: Colors.white,
         onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>AddNotification()));
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>const AddNotification()));
         },
-          child: Icon(
+          child:  Icon(
               size: 50,
               Icons.add),
       ),
@@ -31,7 +31,7 @@ class _NotificationTabState extends State<NotificationTab> {
           future: FirebaseFirestore.instance.collection('notifications').get(),
           builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting){
-              return Center(
+              return  Center(
                 child: CircularProgressIndicator(),
               );
             }
@@ -40,36 +40,36 @@ class _NotificationTabState extends State<NotificationTab> {
                 child: Text("Error:${snapshot.error}"),
               );
             }
-            final _notification = snapshot.data?.docs??[];
+            final notification = snapshot.data?.docs??[];
             return Padding(
               padding: const EdgeInsets.symmetric(
                   vertical: 20,
                   horizontal: 5
               ),
               child: ListView.builder(
-                  itemCount: _notification.length,
+                  itemCount: notification.length,
                   itemBuilder: (context,index){
                     return Card(
                       color: Colors.white,
                       child:Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
+                           SizedBox(
                             height: 10,
                           ),
                           Padding(
                             padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: Text(_notification[index]['matter'],style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
+                            child: Text(notification[index]['matter'],style:  TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
                             ),
                           ),
-                          SizedBox(
+                           SizedBox(
                             height: 10,
                           ),
                           Padding(
                             padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: Text(_notification[index]['content'],style: TextStyle(fontSize: 20),),
+                            child: Text(notification[index]['content'],style:  TextStyle(fontSize: 20),),
                           ),
-                          SizedBox(
+                           SizedBox(
                             height: 20,
                           ),
                         ],

@@ -13,10 +13,10 @@ class _AddNotificationState extends State<AddNotification> {
 
   var matterctrl = TextEditingController();
   var contentctrl = TextEditingController();
-  final date = new DateTime.now();
+  final date = DateTime.now();
   TimeOfDay time = TimeOfDay.now();
   final _key = GlobalKey<FormState>();
-  final Snack = SnackBar(
+  final Snack =  SnackBar(
       duration: Duration(seconds: 3),
       content: Text("Notification Send"));
   Future<dynamic> SubmitNotification ()async{
@@ -41,13 +41,13 @@ class _AddNotificationState extends State<AddNotification> {
           key: _key,
           child: Column(
             children: [
-              SizedBox(
+               SizedBox(
                 height: 140,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                     child: Text(
                       "Enter Matter",style: TextStyle(fontSize: 20),),
                   ),
@@ -65,8 +65,8 @@ class _AddNotificationState extends State<AddNotification> {
                     return null;
                   },
 
-                  style: TextStyle(fontSize: 20),
-                  decoration: InputDecoration(
+                  style:  TextStyle(fontSize: 20),
+                  decoration:  InputDecoration(
                       hintStyle: TextStyle(fontSize: 18),
                     hintText: "Matter",
                     filled: true,
@@ -75,13 +75,13 @@ class _AddNotificationState extends State<AddNotification> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 20,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                     child: Text(
                         selectionColor: Colors.white,
                         "Enter content",style: TextStyle(fontSize: 20)),
@@ -108,9 +108,9 @@ class _AddNotificationState extends State<AddNotification> {
                       return null;
                     },
 
-                    style: TextStyle(fontSize: 20),
+                    style:  TextStyle(fontSize: 20),
                     maxLines: 5,
-                    decoration: InputDecoration(
+                    decoration:  InputDecoration(
                       hintStyle: TextStyle(fontSize: 18),
                         hintText: "content...",
                         border: InputBorder.none
@@ -118,7 +118,7 @@ class _AddNotificationState extends State<AddNotification> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 60,
               ),
               ElevatedButton(
@@ -134,7 +134,7 @@ class _AddNotificationState extends State<AddNotification> {
                     }
 
                   },
-                  child: Text("Submit",style: TextStyle(fontSize: 20),))
+                  child:  Text("Submit",style: TextStyle(fontSize: 20),))
 
             ],
           ),

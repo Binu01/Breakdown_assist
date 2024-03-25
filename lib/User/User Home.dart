@@ -21,8 +21,8 @@ class _User_HomeState extends State<User_Home> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.blue.shade200,
-          leading: Padding(
-            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+          leading:  Padding(
+            padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
             child: CircleAvatar(
               radius: 40,
               backgroundImage: AssetImage("Assets/profile img.png"),
@@ -35,7 +35,7 @@ class _User_HomeState extends State<User_Home> {
               border: Border.all(color: Colors.blue.shade200)
             ),
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration:  InputDecoration(
                 hintStyle: TextStyle(fontSize: 22),
                 hintText: "Search....",
                 prefixIcon: Icon(Icons.search),
@@ -45,14 +45,14 @@ class _User_HomeState extends State<User_Home> {
           ),
           actions: [
            IconButton(onPressed: (){
-             Navigator.push(context, MaterialPageRoute(builder: (context)=>User_Notification()));
+             Navigator.push(context, MaterialPageRoute(builder: (context)=> User_Notification()));
            },
-               icon: Icon(
+               icon:  Icon(
                  CupertinoIcons.bell_fill,
                  color: Colors.amber,
                )
            ),
-            SizedBox(
+             SizedBox(
               width: 10,
             )
           ],
@@ -72,9 +72,9 @@ class _User_HomeState extends State<User_Home> {
                        borderRadius: BorderRadius.circular(10),
                        color: Colors.blue.shade400
                    ),
-                   labelPadding: EdgeInsets.symmetric(horizontal: 20),
+                   labelPadding:  EdgeInsets.symmetric(horizontal: 20),
                    // overlayColor: MaterialStateColor.transparent,
-                   tabs: [
+                   tabs:  [
                      Tab(child: Text("Mechanic",style: TextStyle(fontSize: 20,color: Colors.black),),),
                      Tab(child: Text("Request",style: TextStyle(fontSize: 20,color: Colors.black)),),
                    ]
@@ -82,7 +82,7 @@ class _User_HomeState extends State<User_Home> {
              ),
            ),
          ),
-        body: TabBarView(children: [
+        body:  TabBarView(children: [
           User_Mechanic_List(),
           User_Mechanic_Request_List(),
         ]),

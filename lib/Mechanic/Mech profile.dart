@@ -16,10 +16,10 @@ class _Mech_ProfileState extends State<Mech_Profile> {
         child: Center(
           child: Column(
             children: [
-              SizedBox(
+               SizedBox(
                 height: 50,
               ),
-               Column(
+                Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CircleAvatar(
@@ -28,13 +28,13 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                   ),
                 ],
               ),
-              SizedBox(
+               SizedBox(
                 height: 20,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Name",style: TextStyle(fontSize: 20),),
                   ),
                 ],
@@ -53,13 +53,13 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Username",style: TextStyle(fontSize: 20),),
                   ),
                 ],
@@ -78,13 +78,13 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Phone Number",style: TextStyle(fontSize: 20),),
                   ),
                 ],
@@ -103,18 +103,18 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Email",style: TextStyle(fontSize: 20),),
                   ),
                 ],
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
               Padding(
@@ -131,13 +131,13 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Work Experience",style: TextStyle(fontSize: 20),),
                   ),
                 ],
@@ -156,13 +156,13 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Row(
+               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Workshop Name",style: TextStyle(fontSize: 20),),
                   ),
                 ],
@@ -181,13 +181,13 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
-              Row(
+                Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
                     child: Text("Your Location",style: TextStyle(fontSize: 20),),
                   ),
                 ],
@@ -206,7 +206,7 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                   ),
                 ),
               ),
-              SizedBox(
+               SizedBox(
                 height: 20,
               ),
               ElevatedButton(
@@ -218,7 +218,7 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                     )
                   ),
                   onPressed: (){},
-                  child: Text("Submit",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),))
+                  child:  Text("Submit",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),))
             ],
           ),
         ),

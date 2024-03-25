@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Service_Tab extends StatefulWidget {
@@ -19,15 +18,15 @@ class _Service_TabState extends State<Service_Tab> {
 
           showDialog(context: context, builder: (BuildContext context)=>AlertDialog(
             backgroundColor: Colors.blue.shade200,
-            title: Center(
+            title:  Center(
               child: Text("Add service"),
             ),
-            titleTextStyle: TextStyle(
+            titleTextStyle:  TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
                 color: Colors.black
             ),
-            content: Container(
+            content: SizedBox(
               height: 200,
               width: 300,
               child: Column(
@@ -45,7 +44,7 @@ class _Service_TabState extends State<Service_Tab> {
                         )
                     ),
                   ),
-                  SizedBox(
+                   SizedBox(
                     height: 40,
                   ),
                   ElevatedButton(
@@ -57,7 +56,7 @@ class _Service_TabState extends State<Service_Tab> {
                         foregroundColor: Colors.white,
                       ),
                       onPressed: (){},
-                      child: Text("Add",style: TextStyle(fontSize: 20),))
+                      child:  Text("Add",style: TextStyle(fontSize: 20),))
                 ],
               ),
             ),
@@ -65,13 +64,13 @@ class _Service_TabState extends State<Service_Tab> {
           );
 
         },
-      child: Icon(
+      child:  Icon(
           size: 50,
           Icons.add),
       ),
       appBar: AppBar(
         backgroundColor: Colors.blue.shade200,
-        title: Text("Services",style: TextStyle(fontSize: 30),),
+        title:  Text("Services",style: TextStyle(fontSize: 30),),
         centerTitle: true,
       ),
       body: Center(
@@ -80,14 +79,14 @@ class _Service_TabState extends State<Service_Tab> {
           child: Card(
             color: Colors.blue.shade200,
             child: ListView.separated(
-                separatorBuilder: (context,index)=> Divider(thickness: 1,color: Colors.black,),
+                separatorBuilder: (context,index)=>  Divider(thickness: 1,color: Colors.black,),
               itemCount: 4,
                 itemBuilder: (BuildContext context,int index){
                   return ListTile(
-                      title: Text("Tyre puncture",style: TextStyle(fontSize: 20),),
+                      title:  Text("Tyre puncture",style: TextStyle(fontSize: 20),),
                       trailing: IconButton(
                           onPressed: (){},
-                          icon: Icon(Icons.delete),
+                          icon:  Icon(Icons.delete),
                         iconSize: 30,
                       ),
                     );

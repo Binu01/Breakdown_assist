@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class Rating_Tab extends StatefulWidget {
@@ -20,22 +18,22 @@ class _Rating_TabState extends State<Rating_Tab> {
       backgroundColor: Colors.white,
       appBar: AppBar(
       backgroundColor: Colors.blue.shade200,
-        title: Text("Rating",style: TextStyle(fontSize: 30)),
+        title:  Text("Rating",style: TextStyle(fontSize: 30)),
         centerTitle: true,
       ),
       body: Center(
         child: Column(
           children: [
-            SizedBox(
+             SizedBox(
               height: 20,
             ),
-            Text("The rating given to you",style: TextStyle(color: Colors.grey,fontSize: 20),),
-            SizedBox(
+             Text("The rating given to you",style: TextStyle(color: Colors.grey,fontSize: 20),),
+             SizedBox(
               height: 10,
             ),
             Flexible(
               child: ListView.separated(
-                  separatorBuilder: (context,index)=> Divider(thickness: 5,color: Colors.white,),
+                  separatorBuilder: (context,index)=>  Divider(thickness: 5,color: Colors.white,),
                   itemCount: 2,
                   itemBuilder: (BuildContext context,int index) {
                     return Container(
@@ -47,8 +45,8 @@ class _Rating_TabState extends State<Rating_Tab> {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-              Spacer(),
-              Column(
+               Spacer(),
+               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CircleAvatar(
@@ -58,8 +56,8 @@ class _Rating_TabState extends State<Rating_Tab> {
                   Text("Name", style: TextStyle(fontSize: 20),)
                 ],
               ),
-              Spacer(),
-              Column(
+               Spacer(),
+               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -72,8 +70,8 @@ class _Rating_TabState extends State<Rating_Tab> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Rating"),
-                  SizedBox(
+                   Text("Rating"),
+                   SizedBox(
                     height: 5,
                   ),
                   RatingBar.builder(
@@ -83,7 +81,7 @@ class _Rating_TabState extends State<Rating_Tab> {
                     allowHalfRating: true,
                     itemCount: 5,
                     itemBuilder: (context, _) =>
-                        Icon(
+                         Icon(
                           Icons.star,
                           color: Colors.amber,
                         ),
@@ -93,14 +91,14 @@ class _Rating_TabState extends State<Rating_Tab> {
                         }
                         ),
                   ),
-                  SizedBox(
+                   SizedBox(
                     height: 5,
                   ),
                   Text('$rating'),
 
                 ],
               ),
-              Spacer(),
+               Spacer(),
                         ],
                       ),
                     );
