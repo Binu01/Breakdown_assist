@@ -69,7 +69,7 @@ class _Service_TabState extends State<Service_Tab> {
           Icons.add),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade200,
+        backgroundColor:Colors.blue.shade300,
         title:  Text("Services",style: TextStyle(fontSize: 30),),
         centerTitle: true,
       ),
@@ -77,7 +77,7 @@ class _Service_TabState extends State<Service_Tab> {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 10, 10, 5),
           child: Card(
-            color: Colors.blue.shade200,
+            color: Colors.lightBlue.shade50,
             child: ListView.separated(
                 separatorBuilder: (context,index)=>  Divider(thickness: 1,color: Colors.black,),
               itemCount: 4,

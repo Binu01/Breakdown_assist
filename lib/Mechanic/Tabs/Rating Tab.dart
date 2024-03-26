@@ -17,7 +17,7 @@ class _Rating_TabState extends State<Rating_Tab> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-      backgroundColor: Colors.blue.shade200,
+      backgroundColor: Colors.blue.shade300,
         title:  Text("Rating",style: TextStyle(fontSize: 30)),
         centerTitle: true,
       ),
@@ -39,7 +39,7 @@ class _Rating_TabState extends State<Rating_Tab> {
                     return Container(
                       height: 150,
                       decoration: BoxDecoration(
-                        color: Colors.blue.shade200,
+                        color: Colors.lightBlue.shade50,
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Row(

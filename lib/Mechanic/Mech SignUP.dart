@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import 'Mech Login.dart';
+
 class Mech_SignUp extends StatefulWidget {
   const Mech_SignUp({super.key});
 
@@ -26,7 +28,7 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
       'password': passctrl.text,
       'status': 0,
     }).then((value) {
-      // Navigator.push(context, MaterialPageRoute(builder: (context)=>Mech_Login()));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>Mech_Login()));
     });
     print("done");
   }

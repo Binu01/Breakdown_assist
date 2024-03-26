@@ -14,7 +14,7 @@ class _User_NotificationState extends State<User_Notification> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.blue.shade200,
+          backgroundColor: Colors.blue.shade300,
           title:  Text("Notification",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
           centerTitle: true,
         ),
@@ -43,6 +43,7 @@ class _User_NotificationState extends State<User_Notification> {
                       padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
                       child: Container(
                         decoration: BoxDecoration(
+                          color: Colors.lightBlue.shade50,
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all()),
                         child: Column(

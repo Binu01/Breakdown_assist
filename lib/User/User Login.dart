@@ -1,4 +1,9 @@
+import 'package:breakdown_assist/User/User%20Home.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'User signup.dart';
 
 class User_Login extends StatefulWidget {
   const User_Login({super.key});
@@ -8,22 +13,28 @@ class User_Login extends StatefulWidget {
 }
 
 class _User_LoginState extends State<User_Login> {
+  var Mailctrl = TextEditingController();
+  var Passctrl = TextEditingController();
+
+  String name = '';
+  String phone = '';
+  String email = '';
+  String id = '';
+  // String location='';
 
   final _key = GlobalKey<FormState>();
-  final Snack =  SnackBar(
-      duration: Duration(seconds: 3),
-      content: Text("Successfully Logged in"));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade200,
+      backgroundColor: Colors.lightBlue.shade100,
       body: SingleChildScrollView(
         child: Form(
+          key: _key,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-               SizedBox(
+              SizedBox(
                 height: 75,
               ),
               SizedBox(
@@ -31,84 +42,98 @@ class _User_LoginState extends State<User_Login> {
                 width: 400,
                 child: Image.asset("Assets/userORmech img.jpg"),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
-               Text("LOGIN",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
-               SizedBox(
+              Text(
+                "User Login",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                    decoration: TextDecoration.underline),
+              ),
+              SizedBox(
                 height: 20,
               ),
-               Row(
+              Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
-                    child: Text("Enter Username",style: TextStyle(fontSize: 25),),
+                    child: Text(
+                      "Enter Username",
+                      style: TextStyle(fontSize: 25),
+                    ),
                   ),
                 ],
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: TextFormField(
-
+                  controller: Mailctrl,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return '*Required';
                     }
                     return null;
                   },
-
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
+                        borderRadius: BorderRadius.circular(10)),
                     hintText: 'Username',
                   ),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
-               Row(
+              Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
-                    child: Text("Enter Password",style: TextStyle(fontSize: 25),),
+                    child: Text(
+                      "Enter Password",
+                      style: TextStyle(fontSize: 25),
+                    ),
                   ),
                 ],
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: TextFormField(
-
+                  controller: Passctrl,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return '*Required';
                     }
                     return null;
                   },
-
                   obscureText: true,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
+                        borderRadius: BorderRadius.circular(10)),
                     hintText: 'Password',
                   ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(150, 0, 0, 0),
-                child: TextButton(onPressed: (){},
-                    child:  Text("Forgot Password?",style: TextStyle(fontSize: 15,color: Colors.blue),)),
+                child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Forgot Password?",
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.deepPurple.shade400,
+                      ),
+                    )),
               ),
-
-               SizedBox(
+              SizedBox(
                 height: 50,
               ),
               SizedBox(
@@ -119,28 +144,36 @@ class _User_LoginState extends State<User_Login> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5.0),
                         ),
-                        backgroundColor: Colors.blueAccent,
-                        foregroundColor:Colors.white
-                    ),
-                    onPressed: (){},
-                    child:  Text("Login",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)
-                ),
+                        backgroundColor: Colors.deepPurple.shade400,
+                        foregroundColor: Colors.white),
+                    onPressed: () {
+                      if (_key.currentState!.validate()) {
+                        Userlogin();
+                      }
+                    },
+                    child: Text(
+                      "Login",
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    )),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                   Text("Do you have account ?"),
-                  TextButton(onPressed: (){
-
-                    if (_key.currentState!.validate()) {
-                      ScaffoldMessenger.of(context).showSnackBar(Snack);
-                    }
-
-                  },
-                      child:  Text("SignUp",style: TextStyle(color: Colors.blue),))
+                  Text("Do you have account ?"),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>User_SignUp()));
+                      },
+                      child: Text(
+                        "SignUp",
+                        style: TextStyle(
+                          color: Colors.deepPurple.shade400,
+                        ),
+                      ))
                 ],
               ),
             ],
@@ -148,5 +181,38 @@ class _User_LoginState extends State<User_Login> {
         ),
       ),
     );
+  }
+
+  void Userlogin() async {
+    final user = await FirebaseFirestore.instance
+        .collection('UserDetails')
+        .where('email id', isEqualTo: Mailctrl.text)
+        .where('password', isEqualTo: Passctrl.text)
+        .where('status', isEqualTo: 1)
+        .get();
+
+    if (user.docs.isNotEmpty) {
+      id = user.docs[0].id;
+      name = user.docs[0]['username'];
+      email = user.docs[0]['email id'];
+      phone = user.docs[0]['phone number'];
+      // location = user.docs[0]['location'];
+
+      SharedPreferences data = await SharedPreferences.getInstance();
+      data.setString('id', id);
+      data.setString('username', name);
+      data.setString('email id', email);
+      data.setString('phone number', phone);
+      // data.setString('location', location);
+
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => User_Home()));
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text(
+        "Username and Password Error",
+        style: TextStyle(color: Colors.red),
+      )));
+    }
   }
 }

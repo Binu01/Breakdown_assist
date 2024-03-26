@@ -22,7 +22,7 @@ class _User_Mechanic_ListState extends State<User_Mechanic_List> {
             return Padding(
               padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
               child: Card(
-                color: Colors.blue.shade200,
+                color: Colors.lightBlue.shade50,
                 child: Row(
                   children: [
                     SizedBox(

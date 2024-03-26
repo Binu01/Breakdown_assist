@@ -19,7 +19,7 @@ class _Mech_Req_TabState extends State<Mech_Req_Tab> {
         return Padding(
           padding:  EdgeInsets.fromLTRB(10, 5, 10, 0),
           child: Card(
-            color: Colors.blue.shade200,
+            color: Colors.lightBlue.shade50,
             child:  Row(
               children: [
                 SizedBox(

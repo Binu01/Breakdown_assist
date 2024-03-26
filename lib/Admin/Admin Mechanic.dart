@@ -23,7 +23,7 @@ class _AdminMechanicState extends State<AdminMechanic> {
   void accept(id) {
     setState(() {
       FirebaseFirestore.instance
-          .collection('UserDetails')
+          .collection('mechanics')
           .doc(id)
           .update({'status': 1});
     });
@@ -32,7 +32,7 @@ class _AdminMechanicState extends State<AdminMechanic> {
   void reject(id) {
     setState(() {
       FirebaseFirestore.instance
-          .collection('UserDetails')
+          .collection('mechanics')
           .doc(id)
           .update({'status': 2});
     });
@@ -266,7 +266,7 @@ class _AdminMechanicState extends State<AdminMechanic> {
                                 )),
                           ],
                         ):mech['status'] == 1? Padding(
-                          padding: const EdgeInsets.only(top: 70),
+                          padding: const EdgeInsets.only(top: 50),
                           child: Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
@@ -278,7 +278,7 @@ class _AdminMechanicState extends State<AdminMechanic> {
                             ),
                           ),
                       ): Padding(
-                          padding: const EdgeInsets.only(top: 70),
+                          padding: const EdgeInsets.only(top: 50),
                           child: Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),

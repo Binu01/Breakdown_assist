@@ -14,7 +14,7 @@ class _Mech_NotificationState extends State<Mech_Notification> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.blue.shade200,
+          backgroundColor: Colors.blue.shade300,
           title: Text(
             "Notification",
             style: TextStyle(fontSize: 30),
@@ -45,13 +45,13 @@ class _Mech_NotificationState extends State<Mech_Notification> {
                   itemCount: notification.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all()),
-                        child: Column(
-                          children: [
+                        padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.lightBlue.shade50,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all()),
+                          child: Column(children: [
                             Row(
                               children: [
                                 Padding(
@@ -59,11 +59,11 @@ class _Mech_NotificationState extends State<Mech_Notification> {
                                   child: Text(notification[index]['matter'],
                                       style: TextStyle(fontSize: 20)),
                                 ),
-                        Spacer(),
-                        Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Text(notification[index]['time']),
-                        )
+                                Spacer(),
+                                Padding(
+                                  padding: const EdgeInsets.all(10),
+                                  child: Text(notification[index]['time']),
+                                )
                               ],
                             ),
                             Row(
@@ -80,10 +80,8 @@ class _Mech_NotificationState extends State<Mech_Notification> {
                                 )
                               ],
                             )
-                        ]
-                      ),
-                      )
-                    );
+                          ]),
+                        ));
                   });
             }));
   }

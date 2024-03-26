@@ -22,27 +22,28 @@ class _User_SignUpState extends State<User_SignUp> {
       'email id': emailctrl.text,
       'password': passctrl.text,
       'status': 0,
-    }).then((value){
-       Navigator.push(context, MaterialPageRoute(builder: (context)=> User_Login()));
+    }).then((value) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => User_Login()));
     });
-    print("done");
   }
+
   final _key = GlobalKey<FormState>();
-  final Snack =  SnackBar(
+  final Snack = SnackBar(
       duration: Duration(seconds: 4),
       content: Text("Your Account was Successfully Created"));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade200,
+      backgroundColor: Colors.lightBlue.shade100,
       body: SingleChildScrollView(
         child: Form(
           key: _key,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-               SizedBox(
+              SizedBox(
                 height: 30,
               ),
               SizedBox(
@@ -50,17 +51,21 @@ class _User_SignUpState extends State<User_SignUp> {
                 width: 400,
                 child: Image.asset("Assets/userORmech img.jpg"),
               ),
-               SizedBox(
+              SizedBox(
                 height: 10,
               ),
-               Text(
-                "Sign Up",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+              Text(
+                "User Sign Up",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                    decoration: TextDecoration.underline,
+                    color: Colors.deepPurple),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
-               Row(
+              Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
@@ -74,14 +79,12 @@ class _User_SignUpState extends State<User_SignUp> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: TextFormField(
-
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return '*Required';
                     }
                     return null;
                   },
-
                   controller: userctrl,
                   decoration: InputDecoration(
                     filled: true,
@@ -93,10 +96,10 @@ class _User_SignUpState extends State<User_SignUp> {
                   ),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 10,
               ),
-               Row(
+              Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
@@ -110,14 +113,12 @@ class _User_SignUpState extends State<User_SignUp> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: TextFormField(
-
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return '*Required';
                     }
                     return null;
                   },
-
                   keyboardType: TextInputType.number,
                   controller: phnctrl,
                   decoration: InputDecoration(
@@ -130,10 +131,10 @@ class _User_SignUpState extends State<User_SignUp> {
                   ),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 10,
               ),
-               Row(
+              Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
@@ -147,14 +148,12 @@ class _User_SignUpState extends State<User_SignUp> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: TextFormField(
-
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return '*Required';
                     }
                     return null;
                   },
-
                   controller: emailctrl,
                   decoration: InputDecoration(
                     filled: true,
@@ -166,10 +165,10 @@ class _User_SignUpState extends State<User_SignUp> {
                   ),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 10,
               ),
-               Row(
+              Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
@@ -183,14 +182,12 @@ class _User_SignUpState extends State<User_SignUp> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: TextFormField(
-
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return '*Required';
                     }
                     return null;
                   },
-
                   obscureText: true,
                   controller: passctrl,
                   decoration: InputDecoration(
@@ -203,7 +200,7 @@ class _User_SignUpState extends State<User_SignUp> {
                   ),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 50,
               ),
               SizedBox(
@@ -214,18 +211,18 @@ class _User_SignUpState extends State<User_SignUp> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5.0),
                         ),
-                        backgroundColor: Colors.blueAccent,
+                        backgroundColor: Colors.deepPurple.shade400,
                         foregroundColor: Colors.white),
                     onPressed: () {
-
                       if (_key.currentState!.validate()) {
                         UserSignup();
                         ScaffoldMessenger.of(context).showSnackBar(Snack);
                       }
                     },
-                    child:  Text(
+                    child: Text(
                       "SignUp",
-                      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                     )),
               ),
             ],

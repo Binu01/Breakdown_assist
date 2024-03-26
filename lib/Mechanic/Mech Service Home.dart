@@ -14,45 +14,40 @@ class _Mech_HomeState extends State<Mech_Home> {
   @override
   int indexNum = 0;
   List Tabs = [
-     Request_Tab(),
-     Service_Tab(),
-     Rating_Tab(),
+    Request_Tab(),
+    Service_Tab(),
+    Rating_Tab(),
   ];
-  
-  
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        selectedItemColor: Colors.blue,
-        items: [
-    BottomNavigationBarItem(
-    icon: Icon(Icons.person),
-    label: 'Request',
-    ),
-    BottomNavigationBarItem(
-    icon: Icon(Icons.home_repair_service),
-    label: 'Service',
-    ),
-    BottomNavigationBarItem(
-    icon: Icon(Icons.star),
-    label: 'Rating',
-    ),
-    ],
-        showUnselectedLabels: false,
-        iconSize: 25,
-        currentIndex: indexNum,
-        onTap: (int num){
-          setState(() {
-            indexNum = num;
-          });
-        }
-    ),
-        body: Tabs.elementAt(indexNum),
+    return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.blue.shade300,
+          selectedItemColor: Colors.black,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(color: Colors.black, Icons.person),
+              label: 'Request',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(color: Colors.black, Icons.home_repair_service),
+              label: 'Service',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(color: Colors.black, Icons.star),
+              label: 'Rating',
+            ),
+          ],
+          showUnselectedLabels: false,
+          iconSize: 25,
+          currentIndex: indexNum,
+          onTap: (int num) {
+            setState(() {
+              indexNum = num;
+            });
+          }),
+      body: Tabs.elementAt(indexNum),
     );
   }
 }
-
-
-
-

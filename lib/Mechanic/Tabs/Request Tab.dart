@@ -4,6 +4,8 @@ import 'package:breakdown_assist/Mechanic/Tabs/Mech%20Home%20Service%20Request%2
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../Mech Edit Profile.dart';
+
 class Request_Tab extends StatefulWidget {
   const Request_Tab({super.key});
 
@@ -20,16 +22,21 @@ class _Request_TabState extends State<Request_Tab> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blue.shade300,
           leading:  Padding(
             padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage("Assets/profile img.png"),
+            child: InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Mech_Edit_Profile()));
+              },
+              child: CircleAvatar(
+                backgroundImage: AssetImage("Assets/profile img.png"),
+              ),
             ),
           ),
           actions: [
             IconButton(
-                color: Colors.yellow.shade700,
+                color: Colors.amber,
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const Mech_Notification()));
                 },
