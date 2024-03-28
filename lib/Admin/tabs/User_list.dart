@@ -32,10 +32,14 @@ class _UserlistState extends State<Userlist> {
             padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
             child: ListView.builder(
               itemCount: user.length,
-              itemBuilder: (context,index) {
+              itemBuilder: (context, index) {
                 return InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>AdminUser(id: user[index].id)));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                AdminUser(id: user[index].id)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
@@ -68,7 +72,8 @@ class _UserlistState extends State<Userlist> {
                               ),
                               Text(user[index]['username'],
                                   style: TextStyle(fontSize: 17)),
-                              Text("Location", style: TextStyle(fontSize: 17)),
+                              Text(user[index]['location'],
+                                  style: TextStyle(fontSize: 17)),
                               Text(user[index]['phone number'],
                                   style: TextStyle(fontSize: 17)),
                               Text(user[index]['email id'],

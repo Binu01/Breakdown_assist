@@ -24,7 +24,7 @@ class _AddNotificationState extends State<AddNotification> {
       'matter' : matterctrl.text,
       'content': contentctrl.text,
       'time' : time.format(context),
-      'date' : DateFormat('dd/mm/yy').format(date)
+      'date' : DateFormat('dd/MM/yyyy').format(date)
     }).then((value) {
       Navigator.pop(context);
       matterctrl.clear();

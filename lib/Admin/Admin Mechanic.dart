@@ -72,11 +72,11 @@ class _AdminMechanicState extends State<AdminMechanic> {
                               backgroundImage: AssetImage("Assets/profile img.png"),
                             ),
                             Text(
-                              "Name",
+                              mech['username'],
                               style: TextStyle(fontSize: 20),
                             ),
                             Text(
-                              "Location",
+                              mech['location'],
                               style: TextStyle(fontSize: 20),
                             ),
                           ],
@@ -226,7 +226,7 @@ class _AdminMechanicState extends State<AdminMechanic> {
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(20)),
-                              hintText: "Location"),
+                              hintText: mech['location']),
                         ),
                       ),
                       Padding(

@@ -73,11 +73,11 @@ class _AdminUserState extends State<AdminUser> {
                                     AssetImage("Assets/profile img.png"),
                               ),
                               Text(
-                                "Name",
+                                user['username'],
                                 style: TextStyle(fontSize: 20),
                               ),
                               Text(
-                                "Location",
+                                user['location'],
                                 style: TextStyle(fontSize: 20),
                               ),
                             ],

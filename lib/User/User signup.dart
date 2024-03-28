@@ -14,6 +14,7 @@ class _User_SignUpState extends State<User_SignUp> {
   var phnctrl = TextEditingController();
   var emailctrl = TextEditingController();
   var passctrl = TextEditingController();
+  var locationctrl = TextEditingController();
 
   Future<dynamic> UserSignup() async {
     await FirebaseFirestore.instance.collection('UserDetails').add({
@@ -21,6 +22,8 @@ class _User_SignUpState extends State<User_SignUp> {
       'phone number': phnctrl.text,
       'email id': emailctrl.text,
       'password': passctrl.text,
+      'location':locationctrl.text,
+      'path':'',
       'status': 0,
     }).then((value) {
       Navigator.push(
@@ -162,6 +165,40 @@ class _User_SignUpState extends State<User_SignUp> {
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
                     hintText: 'Enter Email',
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    child: Text(
+                      "Enter Your Location",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return '*Required';
+                    }
+                    return null;
+                  },
+                  controller: locationctrl,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(10)),
+                    hintText: 'Enter Location',
                   ),
                 ),
               ),

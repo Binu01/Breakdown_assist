@@ -1,7 +1,9 @@
-import 'package:breakdown_assist/Mechanic/Mech%20Service%20Home.dart';
+import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Mech_Profile extends StatefulWidget {
   const Mech_Profile({super.key});
@@ -11,20 +13,70 @@ class Mech_Profile extends StatefulWidget {
 }
 
 class _Mech_ProfileState extends State<Mech_Profile> {
-  var namectrl = TextEditingController();
-  var phonectrl = TextEditingController();
-  var emailctrl = TextEditingController();
-  var expctrl = TextEditingController();
-  var shopctrl = TextEditingController();
-  // var locationctrl = TextEditingController();
 
-  var ID = '';
 
   void initState() {
     // TODO: implement initState
     getdata();
     super.initState();
   }
+
+  var imageURL;
+  XFile? _image;
+
+  Future<void> pickimage() async {
+    print("object");
+    final ImagePicker _picker = ImagePicker();
+    try {
+      XFile? pickedimage = await _picker.pickImage(source: ImageSource.gallery);
+      if (pickedimage != null) {
+        setState(() {
+          _image = pickedimage;
+        });
+        print("Image upload succersfully");
+        await uploadimage();
+      }
+    } catch (e) {
+      print("Error picking image:$e");
+    }
+  }
+
+  Future<void> uploadimage() async {
+    try {
+      if (_image != null) {
+        Reference storrageReference =
+        FirebaseStorage.instance.ref().child('profile/${_image!.path}');
+        await storrageReference.putFile(File(_image!.path));
+        imageURL = await storrageReference.getDownloadURL();
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            content: Text(
+              "Uploaded succesfully",
+              style: TextStyle(color: Colors.green),
+            )));
+
+        FirebaseFirestore.instance
+            .collection("mechanics")
+            .doc(ID)
+            .update({'path': imageURL});
+        print("/////////picked$imageURL");
+        Navigator.pop(context);
+      } else
+        CircularProgressIndicator();
+    } catch (e) {
+      print("Error uploading image:$e");
+    }
+  }
+
+  var namectrl = TextEditingController();
+  var phonectrl = TextEditingController();
+  var emailctrl = TextEditingController();
+  var expctrl = TextEditingController();
+  var shopctrl = TextEditingController();
+  var locationctrl = TextEditingController();
+
+  var ID = '';
+
+
 
   void getdata() async {
     final data = await SharedPreferences.getInstance();
@@ -40,7 +92,7 @@ class _Mech_ProfileState extends State<Mech_Profile> {
       "phone number": phonectrl.text,
       "work experience": expctrl.text,
       "shop name": shopctrl.text,
-      // "location":locationctrl.text,
+      "location":locationctrl.text,
     });
     Navigator.pop(context);
   }
@@ -67,11 +119,12 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                       radius: 60,
                       backgroundImage: AssetImage("Assets/profile img.png"),
                     ),
+                    IconButton(onPressed: (){
+                      pickimage();
+                    }, icon: Icon(Icons.camera_alt))
                   ],
                 ),
-                SizedBox(
-                  height: 20,
-                ),
+
                 Row(
                   children: [
                     Padding(
@@ -125,6 +178,7 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                       }
                       return null;
                     },
+                    keyboardType: TextInputType.number,
                     controller: phonectrl,
                     decoration: InputDecoration(
                         filled: true,
@@ -261,7 +315,7 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                       return null;
                     },
 
-                    // controller: locationctrl,
+                    controller: locationctrl,
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.blue.shade100,

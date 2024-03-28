@@ -36,7 +36,6 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
   Getupdateddata() async {
     mech =
         await FirebaseFirestore.instance.collection('mechanics').doc(ID).get();
-    print("get from fb");
   }
 
   @override
@@ -64,11 +63,15 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                         children: [
                           SizedBox(
                             width: 120,
-                          ),
+                          ),mech!['path']==''?
                           CircleAvatar(
                             radius: 60,
                             backgroundImage:
-                                AssetImage("Assets/profile img.png"),
+                            AssetImage("Assets/profile img.png")
+                          ):CircleAvatar(
+                            radius: 60,
+                            backgroundImage:
+                            NetworkImage(mech!['path']),
                           ),
                           SizedBox(
                             width: 50,
@@ -187,7 +190,7 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                             color: Colors.black,
                             fontSize: 20,
                           ),
-                          hintText: "Location"),
+                          hintText:  mech!["location"]),
                     ),
                   ),
                   SizedBox(

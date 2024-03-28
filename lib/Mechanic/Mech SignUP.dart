@@ -17,6 +17,7 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
   var expctrl = TextEditingController();
   var shopctrl = TextEditingController();
   var passctrl = TextEditingController();
+  var locationctrl = TextEditingController();
 
   Future<dynamic> MechSignup() async {
     await FirebaseFirestore.instance.collection('mechanics').add({
@@ -26,11 +27,12 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
       'work experience': expctrl.text,
       'shop name': shopctrl.text,
       'password': passctrl.text,
+      'location':locationctrl.text,
+      'path':'',
       'status': 0,
     }).then((value) {
       Navigator.push(context, MaterialPageRoute(builder: (context)=>Mech_Login()));
     });
-    print("done");
   }
 
   final Snack = SnackBar(
@@ -60,8 +62,8 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                 height: 10,
               ),
               Text(
-                "Sign Up",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                "Mechanic Sign Up",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30,decoration: TextDecoration.underline),
               ),
               SizedBox(
                 height: 20,
@@ -160,6 +162,40 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
                     hintText: 'Enter Email',
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    child: Text(
+                      "Enter Your Location",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return '*Required';
+                    }
+                    return null;
+                  },
+                  controller: locationctrl,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(10)),
+                    hintText: 'Location',
                   ),
                 ),
               ),

@@ -65,7 +65,7 @@ class _Request_TabState extends State<Request_Tab> {
 // overlayColor: MaterialStateColor.transparent,
                     tabs:  [
                       Tab(child: Text("Request",style: TextStyle(fontSize: 20,color: Colors.black),),),
-                      Tab(child: Text("Accept",style: TextStyle(fontSize: 20,color: Colors.black)),),
+                      Tab(child: Text("Accepted",style: TextStyle(fontSize: 20,color: Colors.black)),),
                     ]
                 ),
               ),

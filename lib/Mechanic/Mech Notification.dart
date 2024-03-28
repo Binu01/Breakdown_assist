@@ -53,13 +53,13 @@ class _Mech_NotificationState extends State<Mech_Notification> {
                               border: Border.all()),
                           child: Column(children: [
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(15),
                                   child: Text(notification[index]['matter'],
-                                      style: TextStyle(fontSize: 20)),
+                                      style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
                                 ),
-                                Spacer(),
                                 Padding(
                                   padding: const EdgeInsets.all(10),
                                   child: Text(notification[index]['time']),
@@ -67,13 +67,19 @@ class _Mech_NotificationState extends State<Mech_Notification> {
                               ],
                             ),
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(15),
+                                SizedBox(
+                                  width: 280,
                                   child: Text(notification[index]['content'],
                                       style: TextStyle(fontSize: 20)),
                                 ),
-                                Spacer(),
+
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
                                 Padding(
                                   padding: const EdgeInsets.all(10),
                                   child: Text(notification[index]['date']),

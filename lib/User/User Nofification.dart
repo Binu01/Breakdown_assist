@@ -40,7 +40,7 @@ class _User_NotificationState extends State<User_Notification> {
                 itemCount: notification.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.lightBlue.shade50,
@@ -48,28 +48,31 @@ class _User_NotificationState extends State<User_Notification> {
                             border: Border.all()),
                         child: Column(
                             children: [
-                              Row(
+                              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.all(15),
                                     child: Text(notification[index]['matter'],
-                                        style: TextStyle(fontSize: 20)),
+                                        style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
                                   ),
-                                  Spacer(),
                                   Padding(
                                     padding: const EdgeInsets.all(10),
                                     child: Text(notification[index]['time']),
                                   )
                                 ],
                               ),
-                              Row(
+                              Row(mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(15),
+                                  SizedBox(
+                                    width: 280,
                                     child: Text(notification[index]['content'],
                                         style: TextStyle(fontSize: 20)),
                                   ),
-                                  Spacer(),
+
+                                ],
+                              ),
+                              Row(mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
                                   Padding(
                                     padding: const EdgeInsets.all(10),
                                     child: Text(notification[index]['date']),

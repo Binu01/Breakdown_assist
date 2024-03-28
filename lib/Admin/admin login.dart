@@ -10,17 +10,16 @@ class Admin_login extends StatefulWidget {
 }
 
 class _Admin_loginState extends State<Admin_login> {
-
   var userctrl = TextEditingController();
   var passctrl = TextEditingController();
-  final Snack =  SnackBar(
-      duration: Duration(seconds: 3),
-      content: Text("Successfully Logged in"));
+  final Snack = SnackBar(
+      duration: Duration(seconds: 3), content: Text("Successfully Logged in"));
   final _Key = GlobalKey<FormState>();
 
-  Login(){
-    if (userctrl.text == 'admin@gmail.com' && passctrl.text == '123456'){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Admin_home()));
+  Login() {
+    if (userctrl.text == 'admin@gmail.com' && passctrl.text == '123456') {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => const Admin_home()));
     }
   }
 
@@ -34,78 +33,81 @@ class _Admin_loginState extends State<Admin_login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-               SizedBox(
+              SizedBox(
                 height: 75,
               ),
               Container(
                 height: 200,
                 width: 400,
-                decoration:  BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("Assets/userORmech img.jpg"))
-                ),
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("Assets/userORmech img.jpg"))),
                 // child: Image.asset("Assets/userORmech img.jpg"),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
-               Text("LOGIN",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
-               SizedBox(
+              Text(
+                "LOGIN",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+              ),
+              SizedBox(
                 height: 20,
               ),
-               Row(
+              Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
-                    child: Text("Enter Username",style: TextStyle(fontSize: 25),),
+                    child: Text(
+                      "Enter Username",
+                      style: TextStyle(fontSize: 25),
+                    ),
                   ),
                 ],
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: TextFormField(
-
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return '*Required';
                     }
                     return null;
                   },
-
                   controller: userctrl,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                      hintText: 'Username',
+                        borderRadius: BorderRadius.circular(10)),
+                    hintText: 'Username',
                   ),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
-               Row(
+              Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
-                    child: Text("Enter Password",style: TextStyle(fontSize: 25),),
+                    child: Text(
+                      "Enter Password",
+                      style: TextStyle(fontSize: 25),
+                    ),
                   ),
                 ],
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: TextFormField(
-
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return '*Required';
                     }
                     return null;
                   },
-
                   controller: passctrl,
                   obscureText: true,
                   decoration: InputDecoration(
@@ -113,13 +115,12 @@ class _Admin_loginState extends State<Admin_login> {
                     fillColor: Colors.white,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
+                        borderRadius: BorderRadius.circular(10)),
                     hintText: 'Password',
                   ),
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 120,
               ),
               SizedBox(
@@ -131,16 +132,18 @@ class _Admin_loginState extends State<Admin_login> {
                           borderRadius: BorderRadius.circular(5.0),
                         ),
                         backgroundColor: Colors.blueAccent,
-                        foregroundColor:Colors.white
-                    ),
-                    onPressed: (){
+                        foregroundColor: Colors.white),
+                    onPressed: () {
                       if (_Key.currentState!.validate()) {
                         Login();
                         ScaffoldMessenger.of(context).showSnackBar(Snack);
                       }
                     },
-                    child:  Text("Login",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)
-                ),
+                    child: Text(
+                      "Login",
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    )),
               ),
             ],
           ),
