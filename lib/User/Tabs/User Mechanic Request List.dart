@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class User_Mechanic_Request_List extends StatefulWidget {
   const User_Mechanic_Request_List({super.key});
@@ -11,10 +12,18 @@ class User_Mechanic_Request_List extends StatefulWidget {
 
 class _User_Mechanic_Request_ListState
     extends State<User_Mechanic_Request_List> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getmechdetails();
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: FirebaseFirestore.instance.collection("request").get(),
+        future: FirebaseFirestore.instance.collection("request").where('userid', isEqualTo: ID).get(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
@@ -49,7 +58,7 @@ class _User_Mechanic_Request_ListState
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(mechdetail[index]['username'], style: TextStyle(fontSize: 20)),
+                              Text(mechdetail[index]['mechname'], style: TextStyle(fontSize: 20)),
                               Text(mechdetail[index]['date'], style: TextStyle(fontSize: 20)),
                               Text(mechdetail[index]['time'], style: TextStyle(fontSize: 20)),
                               Text(
@@ -81,5 +90,20 @@ class _User_Mechanic_Request_ListState
                 }),
           );
         });
+  }
+  var ID = '';
+
+  void getmechdetails() async {
+    final mechdetail = await SharedPreferences.getInstance();
+
+    ID = mechdetail.getString('id')!;
+
+    setState(() {});
+  }
+  void showdetail() async {
+    await FirebaseFirestore.instance
+        .collection('UserDetails')
+        .where('mechid', isEqualTo: ID)
+        .get();
   }
 }

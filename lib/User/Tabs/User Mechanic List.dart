@@ -57,7 +57,12 @@ class _User_Mechanic_ListState extends State<User_Mechanic_List> {
                                 children: [
                                   SizedBox(
                                     height: 10,
-                                  ),
+                                  ),mech[index]['path']==''?
+                                  CircleAvatar(
+                                      radius: 40,
+                                      backgroundImage:
+                                      AssetImage("Assets/profile img.png")
+                                  ):
                                   CircleAvatar(
                                     backgroundImage:
                                         NetworkImage(mech[index]['path']),

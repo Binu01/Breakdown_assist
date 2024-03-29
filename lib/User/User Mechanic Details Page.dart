@@ -73,10 +73,13 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
       'userprofile': user!['path'],
       "mechprofile": mech!["path"],
       "username": user!['username'],
+      'mechname':mech!['username'],
       'time': time.format(context),
       'date': DateFormat('dd/MM/yyyy').format(date),
       'location': placectrl.text,
       'mechid': widget.id,
+      'userid':ID,
+      'userphn':user!['phone number']
     });
     print("done");
     Navigator.of(context).pop();

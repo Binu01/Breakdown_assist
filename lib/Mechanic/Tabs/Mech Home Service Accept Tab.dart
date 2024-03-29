@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import '../mech  service accep or reject page.dart';
+
 class Mech_Accept_Tab extends StatefulWidget {
   const Mech_Accept_Tab({super.key});
 
@@ -14,7 +16,7 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: FutureBuilder(
-          future: FirebaseFirestore.instance.collection("request").get(),
+          future: FirebaseFirestore.instance.collection("request").where('status',isEqualTo: 1).get(),
           builder:
               (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
@@ -24,6 +26,7 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
             }
             if (snapshot.hasError) {
               return Center(
+
                 child: Text("Error:${snapshot.error}"),
               );
             }
@@ -48,7 +51,12 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                             children: [
                               SizedBox(
                                 height: 5,
-                              ),
+                              ),detail[index]['userprofile']==''?
+                              CircleAvatar(
+                                  radius: 40,
+                                  backgroundImage:
+                                  AssetImage("Assets/profile img.png")
+                              ):
                               CircleAvatar(
                                 backgroundImage:
                                    NetworkImage(detail[index]['userprofile']),
