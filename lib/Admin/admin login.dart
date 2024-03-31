@@ -10,6 +10,13 @@ class Admin_login extends StatefulWidget {
 }
 
 class _Admin_loginState extends State<Admin_login> {
+  @override
+  void initState() {
+    showpassword = true;
+  }
+
+  var showpassword;
+
   var userctrl = TextEditingController();
   var passctrl = TextEditingController();
   final Snack = SnackBar(
@@ -49,7 +56,10 @@ class _Admin_loginState extends State<Admin_login> {
               ),
               Text(
                 "Admin Login",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30,decoration: TextDecoration.underline),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                    decoration: TextDecoration.underline),
               ),
               SizedBox(
                 height: 20,
@@ -74,6 +84,7 @@ class _Admin_loginState extends State<Admin_login> {
                     }
                     return null;
                   },
+                  keyboardType: TextInputType.emailAddress,
                   controller: userctrl,
                   decoration: InputDecoration(
                     filled: true,
@@ -109,15 +120,23 @@ class _Admin_loginState extends State<Admin_login> {
                     return null;
                   },
                   controller: passctrl,
-                  obscureText: true,
+                  obscureText: showpassword,
                   decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10)),
-                    hintText: 'Password',
-                  ),
+                      filled: true,
+                      fillColor: Colors.white,
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(10)),
+                      hintText: 'Password',
+                      suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              showpassword = !showpassword;
+                            });
+                          },
+                          icon: showpassword
+                              ?  Icon(Icons.visibility)
+                              : Icon(Icons.visibility_off))),
                 ),
               ),
               SizedBox(
