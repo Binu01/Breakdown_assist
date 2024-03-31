@@ -44,6 +44,18 @@ class _Service_TabState extends State<Service_Tab> {
     });
   }
 
+  void delete(id) {
+    FirebaseFirestore.instance
+        .collection('services')
+        .doc(id)
+        .delete()
+        .then((value) {
+      setState(() {});
+    }).catchError((error) {
+      print("Failed to delete service: $error");
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -159,7 +171,9 @@ class _Service_TabState extends State<Service_Tab> {
                             style: TextStyle(fontSize: 20),
                           ),
                           trailing: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              delete(serv[index].id);
+                            },
                             icon: Icon(Icons.delete),
                             iconSize: 30,
                           ),

@@ -48,8 +48,8 @@ class _Admin_loginState extends State<Admin_login> {
                 height: 20,
               ),
               Text(
-                "LOGIN",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                "Admin Login",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30,decoration: TextDecoration.underline),
               ),
               SizedBox(
                 height: 20,

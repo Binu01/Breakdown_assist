@@ -50,9 +50,16 @@ class _MechanicListState extends State<MechanicList> {
                           SizedBox(
                             width: 20,
                           ),
+                          mech[index]['path']==''?
                           CircleAvatar(
+                              radius: 40,
+                              backgroundImage:
+                              AssetImage("Assets/profile img.png")
+                          ):
+                          CircleAvatar(
+                            backgroundImage:
+                            NetworkImage(mech[index]['path']),
                             radius: 40,
-                            backgroundImage: AssetImage("Assets/profile img.png"),
                           ),
                           SizedBox(
                             width: 20,
@@ -71,7 +78,55 @@ class _MechanicListState extends State<MechanicList> {
                               Text(mech[index]['work experience'],
                                   style: TextStyle(fontSize: 17)),
                             ],
-                          )
+                          ),
+                          Spacer(),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              mech[index]['status'] ==1?
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.green.shade400,
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(1.0),
+                                      child: Text(
+                                        "Accepted",
+                                        style: TextStyle(
+                                            fontSize: 20, color: Colors.white),
+                                      ),
+                                    )),
+                              ):mech[index]['status']==2?Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.red.shade400,
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(1.0),
+                                      child: Text(
+                                        "Rejected",
+                                        style: TextStyle(
+                                            fontSize: 20, color: Colors.white),
+                                      ),
+                                    )),
+                              ):Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.grey.shade400,
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(1.0),
+                                      child: Text(
+                                        "Pending",
+                                        style: TextStyle(
+                                            fontSize: 20, color: Colors.white),
+                                      ),
+                                    )),
+                              ),
+                            ],
+                          ),
+                          Spacer(),
                         ],
                       ),
                     ),

@@ -71,9 +71,9 @@ class _Mech_service_AcceptORrejectState
                             backgroundImage:
                                 AssetImage("Assets/profile img.png"))
                         : CircleAvatar(
-                            radius: 50,
+                            radius: 60,
                             backgroundImage:
-                                AssetImage("Assets/profile img.png"),
+                                NetworkImage(detail['userprofile']),
                           ),
                     Text(
                       detail['username'],

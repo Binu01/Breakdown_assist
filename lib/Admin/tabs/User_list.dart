@@ -53,10 +53,16 @@ class _UserlistState extends State<Userlist> {
                           SizedBox(
                             width: 20,
                           ),
+                          user[index]['path']==''?
                           CircleAvatar(
-                            radius: 40,
+                              radius: 40,
+                              backgroundImage:
+                              AssetImage("Assets/profile img.png")
+                          ):
+                          CircleAvatar(
                             backgroundImage:
-                                AssetImage("Assets/profile img.png"),
+                            NetworkImage(user[index]['path']),
+                            radius: 40,
                           ),
                           SizedBox(
                             width: 20,
@@ -65,13 +71,8 @@ class _UserlistState extends State<Userlist> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                '',
-                                style: TextStyle(
-                                    fontSize: 17, fontWeight: FontWeight.bold),
-                              ),
                               Text(user[index]['username'],
-                                  style: TextStyle(fontSize: 17)),
+                                  style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold)),
                               Text(user[index]['location'],
                                   style: TextStyle(fontSize: 17)),
                               Text(user[index]['phone number'],
@@ -82,7 +83,55 @@ class _UserlistState extends State<Userlist> {
                                 height: 10,
                               )
                             ],
-                          )
+                          ),
+                          Spacer(),
+                          Column(
+                            children: [
+                              user[index]['status'] ==1?
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.green.shade400,
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(1.0),
+                                      child: Text(
+                                        "Accepted",
+                                        style: TextStyle(
+                                            fontSize: 20, color: Colors.white),
+                                      ),
+                                    )),
+                              ):user[index]['status']==2?Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.red.shade400,
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(1.0),
+                                      child: Text(
+                                        "Rejected",
+                                        style: TextStyle(
+                                            fontSize: 20, color: Colors.white),
+                                      ),
+                                    )),
+                              ):Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.grey.shade400,
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(1.0),
+                                      child: Text(
+                                        "Pending",
+                                        style: TextStyle(
+                                            fontSize: 20, color: Colors.white),
+                                      ),
+                                    )),
+                              )
+                            ],
+                          ),
+                          Spacer(),
+
                         ],
                       ),
                     ),
