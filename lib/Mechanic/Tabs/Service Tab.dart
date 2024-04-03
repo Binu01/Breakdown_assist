@@ -135,52 +135,51 @@ class _Service_TabState extends State<Service_Tab> {
         ),
         centerTitle: true,
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(10, 10, 10, 5),
-          child: Card(
-            color: Colors.lightBlue.shade50,
-            child: FutureBuilder(
-                future: FirebaseFirestore.instance
-                    .collection('services')
-                    .where('mechid', isEqualTo: ID)
-                    .get(),
-                builder: (BuildContext context,
-                    AsyncSnapshot<QuerySnapshot> snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                  if (snapshot.hasError) {
-                    return Center(
-                      child: Text("Error:${snapshot.error}"),
-                    );
-                  }
-                  final serv = snapshot.data?.docs ?? [];
-                  return ListView.separated(
-                      separatorBuilder: (context, index) => Divider(
-                            thickness: 1,
-                            color: Colors.black,
-                          ),
-                      itemCount: serv.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return ListTile(
-                          title: Text(
-                            serv[index]['service'],
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          trailing: IconButton(
-                            onPressed: () {
-                              delete(serv[index].id);
-                            },
-                            icon: Icon(Icons.delete),
-                            iconSize: 30,
-                          ),
-                        );
-                      });
-                }),
-          ),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(10, 10, 10, 5),
+        child: Card(
+          color: Colors.lightBlue.shade50,
+          child: FutureBuilder(
+              future: FirebaseFirestore.instance
+                  .collection('services')
+                  .where('mechid', isEqualTo: ID)
+                  .get(),
+              builder: (BuildContext context,
+                  AsyncSnapshot<QuerySnapshot> snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+                if (snapshot.hasError) {
+                  return Center(
+                    child: Text("Error:${snapshot.error}"),
+                  );
+                }
+                final serv = snapshot.data?.docs ?? [];
+                return ListView.separated(
+                    shrinkWrap: true,
+                    separatorBuilder: (context, index) => Divider(
+                          thickness: 1,
+                          color: Colors.black,
+                        ),
+                    itemCount: serv.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ListTile(
+                        title: Text(
+                          serv[index]['service'],
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        trailing: IconButton(
+                          onPressed: () {
+                            delete(serv[index].id);
+                          },
+                          icon: Icon(Icons.delete),
+                          iconSize: 30,
+                        ),
+                      );
+                    });
+              }),
         ),
       ),
     );

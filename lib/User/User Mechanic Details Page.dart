@@ -16,6 +16,7 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
     // TODO: implement initState
     super.initState();
     getmechdetails();
+
   }
 
   var ID = '';
@@ -194,9 +195,9 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
                                   });
                                 },
                                 validator: (value) =>
-                                    value == '-select service-'
-                                        ? 'Select service'
-                                        : null,
+                                value == '-select service-'
+                                    ? 'Select service'
+                                    : null,
                               ),
                             ),
                           ),

@@ -36,58 +36,58 @@ class _User_HomeState extends State<User_Home> {
           ),
           title: Container(
             decoration: BoxDecoration(
-              color: Colors.lightBlue.shade50,
-              borderRadius: BorderRadius.circular(40),
-              border: Border.all(color: Colors.lightBlue.shade50)
+                color: Colors.lightBlue.shade50,
+                borderRadius: BorderRadius.circular(40),
+                border: Border.all(color: Colors.lightBlue.shade50)
             ),
             child: TextFormField(
               decoration:  InputDecoration(
-                hintStyle: TextStyle(fontSize: 22),
-                hintText: "Search....",
-                prefixIcon: Icon(Icons.search),
-                border: InputBorder.none
+                  hintStyle: TextStyle(fontSize: 22),
+                  hintText: "Search....",
+                  prefixIcon: Icon(Icons.search),
+                  border: InputBorder.none
               ),
             ),
           ),
           actions: [
-           IconButton(onPressed: (){
-             Navigator.push(context, MaterialPageRoute(builder: (context)=> User_Notification()));
-           },
-               icon:  Icon(
-                 CupertinoIcons.bell_fill,
-                 color: Colors.amber,
-               )
-           ),
-             SizedBox(
+            IconButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> User_Notification()));
+            },
+                icon:  Icon(
+                  CupertinoIcons.bell_fill,
+                  color: Colors.amber,
+                )
+            ),
+            SizedBox(
               width: 10,
             )
           ],
         ),
-         bottomSheet:  Padding(
-           padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-           child: Container(
-             color: Colors.white,
-             child: Card(
-               color: Colors.blue.shade200,
-               shape: RoundedRectangleBorder(
-                 borderRadius: BorderRadius.circular( 10),
-               ),
-               child: TabBar(
-                   indicatorSize: TabBarIndicatorSize.tab,
-                   indicator: BoxDecoration(
-                       borderRadius: BorderRadius.circular(10),
-                       color: Colors.blue.shade500
-                   ),
-                   labelPadding:  EdgeInsets.symmetric(horizontal: 20),
-                   // overlayColor: MaterialStateColor.transparent,
-                   tabs:  [
-                     Tab(child: Text("Mechanic",style: TextStyle(fontSize: 20,color: Colors.black),),),
-                     Tab(child: Text("Request",style: TextStyle(fontSize: 20,color: Colors.black)),),
-                   ]
-               ),
-             ),
-           ),
-         ),
+        bottomSheet:  Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+          child: Container(
+            color: Colors.white,
+            child: Card(
+              color: Colors.blue.shade200,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular( 10),
+              ),
+              child: TabBar(
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  indicator: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.blue.shade500
+                  ),
+                  labelPadding:  EdgeInsets.symmetric(horizontal: 20),
+                  // overlayColor: MaterialStateColor.transparent,
+                  tabs:  [
+                    Tab(child: Text("Mechanic",style: TextStyle(fontSize: 20,color: Colors.black),),),
+                    Tab(child: Text("Request",style: TextStyle(fontSize: 20,color: Colors.black)),),
+                  ]
+              ),
+            ),
+          ),
+        ),
         body:  TabBarView(children: [
           User_Mechanic_List(),
           User_Mechanic_Request_List(),

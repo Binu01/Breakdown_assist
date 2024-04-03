@@ -29,7 +29,7 @@ class _Mech_StatusState extends State<Mech_Status> {
       FirebaseFirestore.instance
           .collection('request')
           .doc(id)
-          .update({'payment': "3", "workamount": amountctrl.text}).then(
+          .update({'payment': 3, "workamount": amountctrl.text}).then(
               (value) => Navigator.pop(context));
     });
   }
@@ -39,7 +39,7 @@ class _Mech_StatusState extends State<Mech_Status> {
       FirebaseFirestore.instance
           .collection('request')
           .doc(id)
-          .update({'payment': "4", "workfaildreason": rejectctrl.text}).then(
+          .update({'payment': 4, "workfaildreason": rejectctrl.text}).then(
               (value) => Navigator.pop(context));
     });
   }

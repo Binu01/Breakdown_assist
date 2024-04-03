@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../Mechanic Failed Page.dart';
 import '../User Mechanic Bill Page.dart';
 
@@ -61,13 +60,15 @@ class _User_Mechanic_Request_ListState
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          User_Mechanic_Bill_Page(id: mechdetail[index].id,)))
+                                          User_Mechanic_Bill_Page(
+                                            id: mechdetail[index].id,
+                                          )))
                               : mechdetail[index]['payment'] == 4
                                   ? Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              Mech_failed_page()))
+                                              Mech_failed_page(id: mechdetail[index].id,)))
                                   : null;
                         },
                         child: Card(
@@ -135,7 +136,42 @@ class _User_Mechanic_Request_ListState
                                               ),
                                             ),
                                           ),
-                                        )
+                                        ): mechdetail[index]['payment'] == 5
+                                  ? Container(
+                                decoration: BoxDecoration(
+                                    border:
+                                    Border.all(color: Colors.grey.shade400),
+                                    borderRadius:
+                                    BorderRadius.circular(10),
+                                    color: Colors.grey.shade400),
+                                child: Center(
+                                  child: Text(
+                                    "payment Completed",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ),
+                              )
+                                  : mechdetail[index]['payment'] == 6
+                                  ? Container(
+                                decoration: BoxDecoration(
+                                    border:
+                                    Border.all(color: Colors.grey.shade400),
+                                    borderRadius:
+                                    BorderRadius.circular(10),
+                                    color: Colors.grey.shade400),
+                                child: Center(
+                                  child: Text(
+                                    "Response Completed",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ),
+                              )
                                       : mechdetail[index]['status'] == 1
                                           ? Container(
                                               height: 30,
@@ -156,25 +192,28 @@ class _User_Mechanic_Request_ListState
                                                 ),
                                               ),
                                             )
-                                          : Container(
-                                              height: 30,
-                                              width: 100,
-                                              decoration: BoxDecoration(
-                                                  border: Border.all(
+                                          : mechdetail[index]['status'] == 2
+                                              ? Container(
+                                                  height: 30,
+                                                  width: 100,
+                                                  decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color: Colors.red),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
                                                       color: Colors.red),
-                                                  borderRadius:
-                                                      BorderRadius.circular(10),
-                                                  color: Colors.red),
-                                              child: Center(
-                                                child: Text(
-                                                  "Rejected",
-                                                  style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 20,
+                                                  child: Center(
+                                                    child: Text(
+                                                      "Rejected",
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 20,
+                                                      ),
+                                                    ),
                                                   ),
-                                                ),
-                                              ),
-                                            )
+                                                )
+                                              : Text(""),
                             ],
                           ),
                         ),
@@ -196,10 +235,10 @@ class _User_Mechanic_Request_ListState
     setState(() {});
   }
 
-  void showdetail() async {
-    await FirebaseFirestore.instance
-        .collection('UserDetails')
-        .where('mechid', isEqualTo: ID)
-        .get();
-  }
+  // void showdetail() async {
+  //   await FirebaseFirestore.instance
+  //       .collection('UserDetails')
+  //       .where('mechid', isEqualTo: ID)
+  //       .get();
+  // }
 }

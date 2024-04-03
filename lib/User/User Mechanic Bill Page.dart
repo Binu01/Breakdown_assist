@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+import 'User Payment Page.dart';
+
 class User_Mechanic_Bill_Page extends StatefulWidget {
   const User_Mechanic_Bill_Page({super.key, required this.id});
   final id;
@@ -19,6 +21,15 @@ class _User_Mechanic_Bill_PageState extends State<User_Mechanic_Bill_Page> {
         .collection('request')
         .doc(widget.id)
         .get();
+  }
+
+  void payment(id) {
+    FirebaseFirestore.instance.collection('request').doc(id).update({
+      'payment': 5,
+      'final':1,
+      'rating': rating,
+    }).then((value) => Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => User_Payment_page())));
   }
 
   double rating = 0;
@@ -51,14 +62,18 @@ class _User_Mechanic_Bill_PageState extends State<User_Mechanic_Bill_Page> {
                   children: [
                     SizedBox(
                       height: 30,
-                    ),detail['mechprofile']==''?
-                    CircleAvatar(
-                      radius: 60,
-                      backgroundImage: AssetImage("Assets/profile img.png"),
-                    ):CircleAvatar(
-                      radius: 60,
-                      backgroundImage: NetworkImage(detail['mechprofile']),
                     ),
+                    detail['mechprofile'] == ''
+                        ? CircleAvatar(
+                            radius: 60,
+                            backgroundImage:
+                                AssetImage("Assets/profile img.png"),
+                          )
+                        : CircleAvatar(
+                            radius: 60,
+                            backgroundImage:
+                                NetworkImage(detail['mechprofile']),
+                          ),
                     SizedBox(
                       height: 10,
                     ),
@@ -96,24 +111,6 @@ class _User_Mechanic_Bill_PageState extends State<User_Mechanic_Bill_Page> {
                         SizedBox(
                           width: 10,
                         ),
-                        RatingBar.builder(
-                          itemSize: 35,
-                          minRating: 0.5,
-                          direction: Axis.horizontal,
-                          allowHalfRating: true,
-                          itemCount: 5,
-                          itemBuilder: (context, _) => Icon(
-                            Icons.star,
-                            color: Colors.amber,
-                          ),
-                          onRatingUpdate: (rating) => setState(() {
-                            this.rating = rating;
-                          }),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        IconButton(onPressed: () {}, icon: Icon(Icons.edit))
                       ],
                     ),
                     SizedBox(
@@ -140,10 +137,8 @@ class _User_Mechanic_Bill_PageState extends State<User_Mechanic_Bill_Page> {
                         readOnly: true,
                         style: TextStyle(fontSize: 25),
                         decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.currency_rupee),
-                          hintText: detail['amount']
-                        ),
-
+                            prefixIcon: Icon(Icons.currency_rupee),
+                            hintText: detail['workamount']),
                       ),
                     ),
                     SizedBox(
@@ -156,7 +151,61 @@ class _User_Mechanic_Bill_PageState extends State<User_Mechanic_Bill_Page> {
                                 borderRadius: BorderRadius.circular(10)),
                             backgroundColor: Colors.blue,
                             foregroundColor: Colors.white),
-                        onPressed: () {},
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) => AlertDialog(
+                                    backgroundColor: Colors.blue.shade200,
+                                    title: Center(
+                                      child: Text("Rating"),
+                                    ),
+                                    titleTextStyle: TextStyle(
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                    content: SizedBox(
+                                      height: 200,
+                                      width: 300,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          RatingBar.builder(
+                                            itemSize: 35,
+                                            minRating: 0.5,
+                                            direction: Axis.horizontal,
+                                            allowHalfRating: true,
+                                            itemCount: 5,
+                                            itemBuilder: (context, _) => Icon(
+                                              Icons.star,
+                                              color: Colors.amber,
+                                            ),
+                                            onRatingUpdate: (rating) =>
+                                                setState(() {
+                                              this.rating = rating;
+                                            }),
+                                          ),
+                                          Text('$rating'),
+                                          SizedBox(
+                                            height: 50,
+                                          ),
+                                          ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                                fixedSize: Size(180, 30),
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius: BorderRadius.circular(10)),
+                                                backgroundColor: Colors.blue,
+                                                foregroundColor: Colors.white
+                                            ),
+                                              onPressed: () {
+                                                payment(widget.id);
+                                              },
+                                              child: Text("OK",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),))
+                                        ],
+                                      ),
+                                    ),
+                                  ));
+                        },
                         child: Text(
                           "Payment",
                           style: TextStyle(fontSize: 20),

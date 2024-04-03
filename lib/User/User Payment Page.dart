@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'User Home.dart';
+
 class User_Payment_page extends StatefulWidget {
   const User_Payment_page({super.key});
 
@@ -30,7 +32,9 @@ class _User_Payment_pageState extends State<User_Payment_page> {
                   backgroundColor: Colors.blue,
                   foregroundColor: Colors.white
                 ),
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>User_Home()));
+                },
                 child:  Text("Back to home page")),
              SizedBox(
               height: 50,
