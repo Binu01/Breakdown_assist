@@ -38,7 +38,7 @@ class _Rating_TabState extends State<Rating_Tab> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade300,
+        backgroundColor:Colors.lightBlue.shade100,
         title: Text("Rating", style: TextStyle(fontSize: 30)),
         centerTitle: true,
       ),

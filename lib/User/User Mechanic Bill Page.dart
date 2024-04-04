@@ -37,7 +37,7 @@ class _User_Mechanic_Bill_PageState extends State<User_Mechanic_Bill_Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade200,
+        backgroundColor: Colors.lightBlue.shade100,
         centerTitle: true,
         title: Text(
           "Mechanic Bill",
@@ -126,17 +126,20 @@ class _User_Mechanic_Bill_PageState extends State<User_Mechanic_Bill_Page> {
                     SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      width: 200,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                          ),
-                          borderRadius: BorderRadius.circular(10)),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 100,
+                      ),
                       child: TextFormField(
                         readOnly: true,
                         style: TextStyle(fontSize: 25),
                         decoration: InputDecoration(
+
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10)
+                          ),
+                          filled: true,
+                            fillColor:Colors.lightBlue.shade100 ,
                             prefixIcon: Icon(Icons.currency_rupee),
                             hintText: detail['workamount']),
                       ),
@@ -149,13 +152,13 @@ class _User_Mechanic_Bill_PageState extends State<User_Mechanic_Bill_Page> {
                             fixedSize: Size(180, 30),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
-                            backgroundColor: Colors.blue,
+                            backgroundColor: Colors.blueAccent,
                             foregroundColor: Colors.white),
                         onPressed: () {
                           showDialog(
                               context: context,
                               builder: (BuildContext context) => AlertDialog(
-                                    backgroundColor: Colors.blue.shade200,
+                                    backgroundColor: Colors.lightBlue.shade50,
                                     title: Center(
                                       child: Text("Rating"),
                                     ),

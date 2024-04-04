@@ -39,7 +39,7 @@ class _User_SignUpState extends State<User_SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade100,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Form(
           key: _key,
@@ -63,7 +63,7 @@ class _User_SignUpState extends State<User_SignUp> {
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
                     decoration: TextDecoration.underline,
-                    color: Colors.deepPurple),
+                    color: Colors.blueAccent),
               ),
               SizedBox(
                 height: 20,
@@ -91,7 +91,7 @@ class _User_SignUpState extends State<User_SignUp> {
                   controller: userctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.lightBlue.shade100,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -126,7 +126,7 @@ class _User_SignUpState extends State<User_SignUp> {
                   controller: phnctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor:Colors.lightBlue.shade100,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -160,7 +160,7 @@ class _User_SignUpState extends State<User_SignUp> {
                   controller: emailctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.lightBlue.shade100,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -194,7 +194,7 @@ class _User_SignUpState extends State<User_SignUp> {
                   controller: locationctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.lightBlue.shade100,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -229,7 +229,7 @@ class _User_SignUpState extends State<User_SignUp> {
                   controller: passctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.lightBlue.shade100,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -238,30 +238,29 @@ class _User_SignUpState extends State<User_SignUp> {
                 ),
               ),
               SizedBox(
-                height: 50,
+                height: 35,
               ),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                      backgroundColor: Colors.blueAccent,
+                      foregroundColor: Colors.white),
+                  onPressed: () {
+                    if (_key.currentState!.validate()) {
+                      UserSignup();
+                      ScaffoldMessenger.of(context).showSnackBar(Snack);
+                    }
+                  },
+                  child: Text(
+                    "SignUp",
+                    style:
+                        TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  )),
               SizedBox(
-                height: 50,
-                width: 150,
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                        backgroundColor: Colors.deepPurple.shade400,
-                        foregroundColor: Colors.white),
-                    onPressed: () {
-                      if (_key.currentState!.validate()) {
-                        UserSignup();
-                        ScaffoldMessenger.of(context).showSnackBar(Snack);
-                      }
-                    },
-                    child: Text(
-                      "SignUp",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                    )),
-              ),
+                height: 30,
+              )
             ],
           ),
         ),

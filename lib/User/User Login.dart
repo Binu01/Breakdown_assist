@@ -27,7 +27,7 @@ class _User_LoginState extends State<User_Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade100,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Form(
           key: _key,
@@ -48,6 +48,7 @@ class _User_LoginState extends State<User_Login> {
               Text(
                 "User Login",
                 style: TextStyle(
+                    color: Colors.blueAccent,
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
                     decoration: TextDecoration.underline),
@@ -78,7 +79,7 @@ class _User_LoginState extends State<User_Login> {
                   },
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.lightBlue.shade100,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -113,7 +114,7 @@ class _User_LoginState extends State<User_Login> {
                   obscureText: true,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.lightBlue.shade100,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -129,7 +130,7 @@ class _User_LoginState extends State<User_Login> {
                       "Forgot Password?",
                       style: TextStyle(
                         fontSize: 15,
-                        color: Colors.deepPurple.shade400,
+                        color: Colors.blueAccent,
                       ),
                     )),
               ),
@@ -144,7 +145,7 @@ class _User_LoginState extends State<User_Login> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5.0),
                         ),
-                        backgroundColor: Colors.deepPurple.shade400,
+                        backgroundColor: Colors.blueAccent,
                         foregroundColor: Colors.white),
                     onPressed: () {
                       if (_key.currentState!.validate()) {
@@ -166,12 +167,15 @@ class _User_LoginState extends State<User_Login> {
                   Text("Do you have account ?"),
                   TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>User_SignUp()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => User_SignUp()));
                       },
                       child: Text(
                         "SignUp",
                         style: TextStyle(
-                          color: Colors.deepPurple.shade400,
+                          color: Colors.blueAccent,
                         ),
                       ))
                 ],

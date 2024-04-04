@@ -50,6 +50,7 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
           return Text("Error${snapshot.error}");
         }
         return Scaffold(
+          backgroundColor: Colors.lightBlue.shade50,
           body: SingleChildScrollView(
             child: Center(
               child: Column(
@@ -77,7 +78,7 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                             width: 50,
                           ),
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 60),
+                            padding: const EdgeInsets.fromLTRB(0, 100, 0,0),
                             child: IconButton(
                                 onPressed: () {
                                   Navigator.push(
@@ -219,7 +220,7 @@ class _Mech_Edit_ProfileState extends State<Mech_Edit_Profile> {
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           fixedSize: Size(150, 30),
-                          backgroundColor: Colors.blue,
+                          backgroundColor: Colors.blueAccent,
                           foregroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10))),

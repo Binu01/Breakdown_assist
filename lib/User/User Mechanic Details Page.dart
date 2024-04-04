@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -16,7 +17,6 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
     // TODO: implement initState
     super.initState();
     getmechdetails();
-
   }
 
   var ID = '';
@@ -33,16 +33,16 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
   TimeOfDay time = TimeOfDay.now();
   final _key = GlobalKey<FormState>();
 
-  String dropdownvalue = '-select service-';
+  String? dropdownvalue;
 
-  var items = [
-    '-select service-',
-    'engine service',
-    'fuel',
-    'puncture',
-    'ac repair',
-    'chain sporke',
-  ];
+  // var items = [
+  //   '-select service-',
+  //   'engine service',
+  //   'fuel',
+  //   'puncture',
+  //   'ac repair',
+  //   'chain sporke',
+  // ];
 
   DocumentSnapshot? mech;
   getdata() async {
@@ -74,14 +74,14 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
       'userprofile': user!['path'],
       "mechprofile": mech!["path"],
       "username": user!['username'],
-      'mechname':mech!['username'],
+      'mechname': mech!['username'],
       'time': time.format(context),
       'date': DateFormat('dd/MM/yyyy').format(date),
       'location': placectrl.text,
       'mechid': widget.id,
-      'userid':ID,
-      'userphn':user!['phone number'],
-      'work experience':mech!['work experience']
+      'userid': ID,
+      'userphn': user!['phone number'],
+      'work experience': mech!['work experience']
     });
     print("done");
     Navigator.of(context).pop();
@@ -91,7 +91,7 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade200,
+        backgroundColor: Colors.lightBlue.shade100,
         title: Text("Needed Service"),
         centerTitle: true,
       ),
@@ -170,40 +170,67 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
                         height: 10,
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
-                            width: 250,
-                            decoration: BoxDecoration(
-                                color: Colors.blue.shade200,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                              child: DropdownButtonFormField(
-                                value: dropdownvalue,
-                                icon: const Icon(Icons.keyboard_arrow_down),
-                                items: items.map((String items) {
-                                  return DropdownMenuItem(
-                                    value: items,
-                                    child: Text(items),
-                                  );
-                                }).toList(),
-                                onChanged: (String? newValue) {
-                                  setState(() {
-                                    dropdownvalue = newValue!;
-                                    print(dropdownvalue);
-                                  });
-                                },
-                                validator: (value) =>
-                                value == '-select service-'
-                                    ? 'Select service'
-                                    : null,
-                              ),
-                            ),
+                          StreamBuilder<QuerySnapshot>(
+                            stream: FirebaseFirestore.instance
+                                .collection('services')
+                                .where('mechid', isEqualTo: widget.id)
+                                .snapshots(),
+                            builder: (context, snapshot) {
+                              if (snapshot.connectionState ==
+                                  ConnectionState.waiting) {
+                                return const SizedBox();
+                              } else if (snapshot.hasError) {
+                                return Text('Error: ${snapshot.error}');
+                              } else {
+                                List<String> tradeList = snapshot.data!.docs
+                                    .map((DocumentSnapshot document) =>
+                                        document['service'].toString())
+                                    .toList();
+
+                                return Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          border:
+                                              Border.all(color: Colors.black54),
+                                          borderRadius:
+                                              BorderRadius.circular(8)),
+                                      child: DropdownButton<String>(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 20, vertical: 3),
+                                        underline: const SizedBox(),
+                                        borderRadius: BorderRadius.circular(10),
+                                        hint: const Text(
+                                            "choose your needed service"),
+                                        value: dropdownvalue,
+                                        // Set initial value if needed
+                                        onChanged: (String? newValue) {
+                                          setState(() {
+                                            dropdownvalue = newValue!;
+                                            print(dropdownvalue);
+                                          });
+                                        },
+
+                                        items: tradeList
+                                            .map<DropdownMenuItem<String>>(
+                                                (String value) =>
+                                                    DropdownMenuItem<String>(
+                                                      value: value,
+                                                      child: Text(value),
+                                                    ))
+                                            .toList(),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                            },
                           ),
-                          IconButton(
-                              onPressed: () {},
-                              icon: Icon(size: 35, Icons.add_circle_rounded))
+                          const SizedBox(
+                            width: 20,
+                          )
                         ],
                       ),
                       SizedBox(
@@ -223,7 +250,7 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
                         height: 100,
                         width: 300,
                         decoration: BoxDecoration(
-                          color: Colors.blue.shade200,
+                          color: Colors.lightBlue.shade50,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -245,14 +272,14 @@ class _User_Mech_Detail_pgState extends State<User_Mech_Detail_pg> {
                         ),
                       ),
                       SizedBox(
-                        height: 70,
+                        height: 50,
                       ),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               fixedSize: Size(180, 30),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10)),
-                              backgroundColor: Colors.blue,
+                              backgroundColor: Colors.blueAccent,
                               foregroundColor: Colors.white),
                           onPressed: () {
                             if (_key.currentState!.validate()) {

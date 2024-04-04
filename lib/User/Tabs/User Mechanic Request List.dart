@@ -44,68 +44,69 @@ class _User_Mechanic_Request_ListState
             backgroundColor: Colors.white,
             body: Padding(
               padding: const EdgeInsets.all(5.0),
-              child: ListView.separated(
-                  separatorBuilder: (context, index) => Divider(
-                        thickness: 5,
-                        color: Colors.white,
-                      ),
-                  itemCount: mechdetail.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
-                      child: InkWell(
-                        onTap: () {
-                          mechdetail[index]['payment'] == 3
-                              ? Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          User_Mechanic_Bill_Page(
-                                            id: mechdetail[index].id,
-                                          )))
-                              : mechdetail[index]['payment'] == 4
-                                  ? Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              Mech_failed_page(id: mechdetail[index].id,)))
-                                  : null;
-                        },
-                        child: Card(
-                          color: Colors.lightBlue.shade50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(mechdetail[index]['mechname'],
-                                      style: TextStyle(fontSize: 20)),
-                                  Text(mechdetail[index]['date'],
-                                      style: TextStyle(fontSize: 20)),
-                                  Text(mechdetail[index]['time'],
-                                      style: TextStyle(fontSize: 20)),
-                                  Text(
-                                    mechdetail[index]['service'],
-                                    style: TextStyle(fontSize: 20),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              mechdetail[index]['payment'] == 3
-                                  ? Container(
-                                      height: 30,
-                                      width: 100,
+              child: Container(
+                height: 635,
+                child: ListView.separated(
+                    separatorBuilder: (context, index) => Divider(
+                          thickness: 5,
+                          color: Colors.white,
+                        ),
+                    itemCount: mechdetail.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+                        child: InkWell(
+                          onTap: () {
+                            mechdetail[index]['payment'] == 3
+                                ? Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            User_Mechanic_Bill_Page(
+                                              id: mechdetail[index].id,
+                                            )))
+                                : mechdetail[index]['payment'] == 4
+                                    ? Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                Mech_failed_page(id: mechdetail[index].id,)))
+                                    : null;
+                          },
+                          child: Card(
+                            color: Colors.lightBlue.shade50,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(mechdetail[index]['mechname'],
+                                        style: TextStyle(fontSize: 20)),
+                                    Text(mechdetail[index]['date'],
+                                        style: TextStyle(fontSize: 20)),
+                                    Text(mechdetail[index]['time'],
+                                        style: TextStyle(fontSize: 20)),
+                                    Text(
+                                      mechdetail[index]['service'],
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    mechdetail[index]['payment'] == 3
+                                        ? Container(
+                                      height: 35,
+                                      width: 180,
                                       decoration: BoxDecoration(
                                           border:
-                                              Border.all(color: Colors.green),
+                                          Border.all(color: Colors.green),
                                           borderRadius:
-                                              BorderRadius.circular(10),
+                                          BorderRadius.circular(10),
                                           color: Colors.green),
                                       child: Center(
                                         child: Text(
@@ -117,109 +118,117 @@ class _User_Mechanic_Request_ListState
                                         ),
                                       ),
                                     )
-                                  : mechdetail[index]['payment'] == 4
-                                      ? Container(
-                                          height: 30,
-                                          width: 100,
-                                          decoration: BoxDecoration(
-                                              border:
-                                                  Border.all(color: Colors.red),
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              color: Colors.red),
-                                          child: Center(
-                                            child: Text(
-                                              "Failed",
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 20,
-                                              ),
-                                            ),
+                                        : mechdetail[index]['payment'] == 4
+                                        ? Container(
+                                      height: 35,
+                                      width: 180,
+                                      decoration: BoxDecoration(
+                                          border:
+                                          Border.all(color: Colors.red),
+                                          borderRadius:
+                                          BorderRadius.circular(10),
+                                          color: Colors.red),
+                                      child: Center(
+                                        child: Text(
+                                          "Failed",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20,
                                           ),
-                                        ): mechdetail[index]['payment'] == 5
-                                  ? Container(
-                                decoration: BoxDecoration(
-                                    border:
-                                    Border.all(color: Colors.grey.shade400),
-                                    borderRadius:
-                                    BorderRadius.circular(10),
-                                    color: Colors.grey.shade400),
-                                child: Center(
-                                  child: Text(
-                                    "payment Completed",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ),
-                              )
-                                  : mechdetail[index]['payment'] == 6
-                                  ? Container(
-                                decoration: BoxDecoration(
-                                    border:
-                                    Border.all(color: Colors.grey.shade400),
-                                    borderRadius:
-                                    BorderRadius.circular(10),
-                                    color: Colors.grey.shade400),
-                                child: Center(
-                                  child: Text(
-                                    "Response Completed",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ),
-                              )
-                                      : mechdetail[index]['status'] == 1
-                                          ? Container(
-                                              height: 30,
-                                              width: 100,
-                                              decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Colors.green),
-                                                  borderRadius:
-                                                      BorderRadius.circular(10),
-                                                  color: Colors.green),
-                                              child: Center(
-                                                child: Text(
-                                                  "Approved",
-                                                  style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 20,
-                                                  ),
-                                                ),
-                                              ),
-                                            )
-                                          : mechdetail[index]['status'] == 2
-                                              ? Container(
-                                                  height: 30,
-                                                  width: 100,
-                                                  decoration: BoxDecoration(
-                                                      border: Border.all(
-                                                          color: Colors.red),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              10),
-                                                      color: Colors.red),
-                                                  child: Center(
-                                                    child: Text(
-                                                      "Rejected",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize: 20,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                )
-                                              : Text(""),
-                            ],
+                                        ),
+                                      ),
+                                    ): mechdetail[index]['payment'] == 5
+                                        ? Container(
+                                      height: 35,
+                                      width: 180,
+                                      decoration: BoxDecoration(
+
+                                          border:
+                                          Border.all(color: Colors.grey.shade400),
+                                          borderRadius:
+                                          BorderRadius.circular(10),
+                                          color: Colors.grey.shade400),
+                                      child: Center(
+                                        child: Text(
+                                          "payment Completed",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                        : mechdetail[index]['payment'] == 6
+                                        ? Container(
+                                      height: 35,
+                                      width: 180,
+                                      decoration: BoxDecoration(
+                                          border:
+                                          Border.all(color: Colors.grey.shade400),
+                                          borderRadius:
+                                          BorderRadius.circular(10),
+                                          color: Colors.grey.shade400),
+                                      child: Center(
+                                        child: Text(
+                                          "Response Completed",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                        : mechdetail[index]['status'] == 1
+                                        ? Container(
+                                      height: 35,
+                                      width: 180,
+                                      decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.green),
+                                          borderRadius:
+                                          BorderRadius.circular(10),
+                                          color: Colors.green),
+                                      child: Center(
+                                        child: Text(
+                                          "Approved",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                        : mechdetail[index]['status'] == 2
+                                        ? Container(
+                                      height: 35,
+                                      width: 180,
+                                      decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.red),
+                                          borderRadius:
+                                          BorderRadius.circular(
+                                              10),
+                                          color: Colors.red),
+                                      child: Center(
+                                        child: Text(
+                                          "Rejected",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20,
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                        : Text(""),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  }),
+                      );
+                    }),
+              ),
             ),
           );
         });

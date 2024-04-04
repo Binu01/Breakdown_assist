@@ -16,7 +16,7 @@ class _HomeTabState extends State<HomeTab>{
       length: 2,
       initialIndex: 0,
       child: Scaffold(
-          backgroundColor: Colors.blue.shade200,
+          backgroundColor: Colors.white,
           body:Column(
             children: [
                SizedBox(
@@ -25,7 +25,7 @@ class _HomeTabState extends State<HomeTab>{
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Card(
-                  color: Colors.white,
+                  color: Colors.lightBlue.shade100,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular( 10),
                   ),
@@ -33,7 +33,7 @@ class _HomeTabState extends State<HomeTab>{
                     indicatorSize: TabBarIndicatorSize.tab,
                     indicator: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.blue.shade400
+                      color: Colors.blueAccent.shade100
                     ),
                     labelPadding:  EdgeInsets.symmetric(horizontal: 20),
                     // overlayColor: MaterialStateColor.transparent,

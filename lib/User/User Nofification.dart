@@ -14,7 +14,7 @@ class _User_NotificationState extends State<User_Notification> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.blue.shade300,
+          backgroundColor: Colors.lightBlue.shade100,
           title:  Text("Notification",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
           centerTitle: true,
         ),

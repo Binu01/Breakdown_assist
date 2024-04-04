@@ -102,7 +102,7 @@ class _Mech_ProfileState extends State<Mech_Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.lightBlue.shade50,
       body: SingleChildScrollView(
         child: Form(
           key: _Key,
@@ -330,7 +330,7 @@ class _Mech_ProfileState extends State<Mech_Profile> {
                 ),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
+                        backgroundColor: Colors.blueAccent,
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),

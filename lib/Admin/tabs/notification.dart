@@ -14,7 +14,7 @@ class _NotificationTabState extends State<NotificationTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade200,
+      backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30)
@@ -43,14 +43,14 @@ class _NotificationTabState extends State<NotificationTab> {
             final notification = snapshot.data?.docs??[];
             return Padding(
               padding: const EdgeInsets.symmetric(
-                  vertical: 20,
+                  vertical: 10,
                   horizontal: 5
               ),
               child: ListView.builder(
                   itemCount: notification.length,
                   itemBuilder: (context,index){
                     return Card(
-                      color: Colors.white,
+                      color: Colors.lightBlue.shade50,
                       child:Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

@@ -11,6 +11,7 @@ import 'Mechanic/Mech Notification.dart';
 import 'Mechanic/Mech Service Home.dart';
 import 'Mechanic/Mech SignUP.dart';
 import 'Mechanic/Mech profile.dart';
+import 'Splash.dart';
 import 'User/Tabs/User Mechanic List.dart';
 import 'User/User Home.dart';
 import 'User/User Login.dart';
@@ -30,6 +31,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: Mech_Login());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Splashscrn());
   }
 }

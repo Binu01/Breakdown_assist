@@ -13,7 +13,7 @@ class _UserlistState extends State<Userlist> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade200,
+      backgroundColor: Colors.white,
       body: FutureBuilder(
         future: FirebaseFirestore.instance.collection("UserDetails").get(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -44,7 +44,7 @@ class _UserlistState extends State<Userlist> {
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                     child: Container(
-                      color: Colors.white,
+                      color: Colors.lightBlue.shade50,
                       width: 330,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,

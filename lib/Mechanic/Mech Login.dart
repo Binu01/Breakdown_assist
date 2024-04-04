@@ -13,7 +13,6 @@ class Mech_Login extends StatefulWidget {
 }
 
 class _Mech_LoginState extends State<Mech_Login> {
-
   var mailctrl = TextEditingController();
   var passctrl = TextEditingController();
 
@@ -30,7 +29,7 @@ class _Mech_LoginState extends State<Mech_Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade100,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Form(
           key: _key,
@@ -50,7 +49,11 @@ class _Mech_LoginState extends State<Mech_Login> {
               ),
               Text(
                 "Mechanic Login",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30,decoration: TextDecoration.underline),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                    decoration: TextDecoration.underline,
+                    color: Colors.blueAccent),
               ),
               SizedBox(
                 height: 20,
@@ -78,7 +81,7 @@ class _Mech_LoginState extends State<Mech_Login> {
                   controller: mailctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.lightBlue.shade100,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -113,7 +116,7 @@ class _Mech_LoginState extends State<Mech_Login> {
                   obscureText: true,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.lightBlue.shade100,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -127,7 +130,7 @@ class _Mech_LoginState extends State<Mech_Login> {
                     onPressed: () {},
                     child: Text(
                       "Forgot Password?",
-                      style: TextStyle(fontSize: 15, color: Colors.deepPurple.shade400),
+                      style: TextStyle(fontSize: 15, color: Colors.blueAccent),
                     )),
               ),
               SizedBox(
@@ -141,18 +144,17 @@ class _Mech_LoginState extends State<Mech_Login> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5.0),
                         ),
-                        backgroundColor: Colors.deepPurple.shade400,
+                        backgroundColor: Colors.blueAccent,
                         foregroundColor: Colors.white),
                     onPressed: () {
-
                       if (_key.currentState!.validate()) {
                         Mechlogin();
-
                       }
                     },
                     child: const Text(
                       "Login",
-                      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                     )),
               ),
               SizedBox(
@@ -164,11 +166,14 @@ class _Mech_LoginState extends State<Mech_Login> {
                   Text("Do you have account ?"),
                   TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Mech_SignUp()));
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Mech_SignUp()));
                       },
                       child: Text(
                         "SignUp",
-                        style: TextStyle(color: Colors.deepPurple.shade400),
+                        style: TextStyle(color: Colors.blueAccent),
                       ))
                 ],
               ),
@@ -204,12 +209,11 @@ class _Mech_LoginState extends State<Mech_Login> {
       data.setString('shopname', shopname);
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Mech_Home()));
-    }
-    else {
+    } else {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
           content: Text(
         "Username and Password Error",
-        style: TextStyle(color: Colors.red,backgroundColor: Colors.white),
+        style: TextStyle(color: Colors.red, backgroundColor: Colors.white),
       )));
     }
   }

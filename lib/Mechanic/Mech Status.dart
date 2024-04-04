@@ -220,6 +220,8 @@ class _Mech_StatusState extends State<Mech_Status> {
                                       },
                                       keyboardType: TextInputType.number,
                                       decoration: InputDecoration(
+                                        filled: true,
+                                          fillColor: Colors.lightBlue.shade50,
                                           border: OutlineInputBorder(
                                               borderRadius:
                                                   BorderRadius.circular(10)),
@@ -236,7 +238,7 @@ class _Mech_StatusState extends State<Mech_Status> {
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(10)),
-                                        backgroundColor: Colors.blue,
+                                        backgroundColor: Colors.blueAccent,
                                         foregroundColor: Colors.white,
                                       ),
                                       onPressed: () {
@@ -269,6 +271,7 @@ class _Mech_StatusState extends State<Mech_Status> {
                                         height: 150,
                                         width: 300,
                                         decoration: BoxDecoration(
+                                          color: Colors.lightBlue.shade50,
                                             border:
                                                 Border.all(color: Colors.black),
                                             borderRadius:
@@ -284,6 +287,7 @@ class _Mech_StatusState extends State<Mech_Status> {
                                           },
                                           maxLines: 5,
                                           decoration: InputDecoration(
+                                            hintText: " Enter Reason..",
                                               border: InputBorder.none),
                                         ),
                                       ),
@@ -296,7 +300,7 @@ class _Mech_StatusState extends State<Mech_Status> {
                                             shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(10)),
-                                            backgroundColor: Colors.blue,
+                                            backgroundColor: Colors.blueAccent,
                                             foregroundColor: Colors.white,
                                           ),
                                           onPressed: () {

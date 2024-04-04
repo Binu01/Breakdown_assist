@@ -43,7 +43,8 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade200,
+      backgroundColor: Colors.white,
+      // backgroundColor: Colors.blue.shade200,
       body: SingleChildScrollView(
         child: Form(
           key: _Key,
@@ -63,7 +64,7 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
               ),
               Text(
                 "Mechanic Sign Up",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30,decoration: TextDecoration.underline),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30,decoration: TextDecoration.underline,color: Colors.blueAccent),
               ),
               SizedBox(
                 height: 20,
@@ -91,7 +92,7 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                   controller: userctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.blue.shade200,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -126,7 +127,7 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                   controller: phnctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.blue.shade200,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -157,7 +158,7 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                   controller: emailctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.blue.shade200,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -191,7 +192,7 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                   controller: locationctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.blue.shade200,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -225,7 +226,7 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                   controller: expctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.blue.shade200,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -259,7 +260,7 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                   controller: shopctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.blue.shade200,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -294,7 +295,7 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                   obscureText: true,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.blue.shade200,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),

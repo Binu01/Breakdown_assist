@@ -42,15 +42,17 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                 itemCount: detail.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
+                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                     child: InkWell(
                       onTap: () {
-                        detail[index]['payment']==0?Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Mech_Status(
-                                      id: detail[index].id,
-                                    ))):null;
+                        detail[index]['payment'] == 0
+                            ? Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Mech_Status(
+                                          id: detail[index].id,
+                                        )))
+                            : null;
                       },
                       child: Card(
                         color: Colors.lightBlue.shade50,
@@ -79,7 +81,6 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                                     style: TextStyle(fontSize: 20)),
                               ],
                             ),
-
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -95,89 +96,121 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                                     style: TextStyle(fontSize: 20)),
                               ],
                             ),
-
-                           Column(
-                             children: [
-                               detail[index]['payment'] == 0?Container(
-                                 decoration: BoxDecoration(
-                                     border: Border.all(color: Colors.orange),
-                                     borderRadius: BorderRadius.circular(10),
-                                     color: Colors.orange),
-                                 child: Padding(
-                                   padding: const EdgeInsets.all(2.0),
-                                   child: Text(
-                                     "Work in progress",
-                                     style: TextStyle(
-                                       color: Colors.white,
-                                       fontSize: 15,
-                                     ),
-                                   ),
-                                 ),
-                               ) :detail[index]['payment']==3? Container(
-                                 decoration: BoxDecoration(
-                                     border: Border.all(color: Colors.red),
-                                     borderRadius: BorderRadius.circular(10),
-                                     color: Colors.red),
-                                 child: Padding(
-                                   padding: const EdgeInsets.all(2.0),
-                                   child: Text(
-                                     "Payment pending",
-                                     style: TextStyle(
-                                       color: Colors.white,
-                                       fontSize: 15,
-                                     ),
-                                   ),
-                                 ),
-                               ):detail[index]['payment']==4?Container(
-                                 decoration: BoxDecoration(
-                                     border: Border.all(color: Colors.red),
-                                     borderRadius: BorderRadius.circular(10),
-                                     color: Colors.red),
-                                 child: Padding(
-                                   padding: const EdgeInsets.all(2.0),
-                                   child: Text(
-                                     "Failed",
-                                     style: TextStyle(
-                                       color: Colors.white,
-                                       fontSize: 15,
-                                     ),
-                                   ),
-                                 ),
-                               ):detail[index]['payment'] == 5
-                                       ? Container(
-                                     decoration: BoxDecoration(
-                                         border: Border.all(color: Colors.green),
-                                         borderRadius: BorderRadius.circular(10),
-                                         color: Colors.green),
-                                     child: Padding(
-                                       padding: const EdgeInsets.all(2.0),
-                                       child: Text(
-                                         "Payment successful",
-                                         style: TextStyle(
-                                           color: Colors.white,
-                                           fontSize: 15,
-                                         ),
-                                       ),
-                                     ),
-                                   ):detail[index]['payment'] == 6? Container(
-                                 decoration: BoxDecoration(
-                                     border: Border.all(color: Colors.grey.shade400),
-                                     borderRadius: BorderRadius.circular(10),
-                                     color: Colors.grey.shade400),
-                                 child: Padding(
-                                   padding: const EdgeInsets.all(2.0),
-                                   child: Text(
-                                     "Completed",
-                                     style: TextStyle(
-                                       color: Colors.white,
-                                       fontSize: 15,
-                                     ),
-                                   ),
-                                 ),
-                               ):Text(''),
-                             ],
-                           ),
-
+                            Column(
+                              children: [
+                                detail[index]['payment'] == 0
+                                    ? Container(
+                                        decoration: BoxDecoration(
+                                            border: Border.all(
+                                                color: Colors.orange),
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            color: Colors.orange),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(2.0),
+                                          child: Text(
+                                            "Work in progress",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 15,
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    : detail[index]['payment'] == 3
+                                        ? Container(
+                                            decoration: BoxDecoration(
+                                                border: Border.all(
+                                                    color: Colors.red),
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                color: Colors.red),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(2.0),
+                                              child: Text(
+                                                "Payment pending",
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 15,
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        : detail[index]['payment'] == 4
+                                            ? Container(
+                                                decoration: BoxDecoration(
+                                                    border: Border.all(
+                                                        color: Colors.red),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                    color: Colors.red),
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(2.0),
+                                                  child: Text(
+                                                    "Failed",
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 15,
+                                                    ),
+                                                  ),
+                                                ),
+                                              )
+                                            : detail[index]['payment'] == 5
+                                                ? Container(
+                                                    decoration: BoxDecoration(
+                                                        border: Border.all(
+                                                            color:
+                                                                Colors.green),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10),
+                                                        color: Colors.green),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              2.0),
+                                                      child: Text(
+                                                        "Payment successful",
+                                                        style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 15,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  )
+                                                : detail[index]['payment'] == 6
+                                                    ? Container(
+                                                        decoration: BoxDecoration(
+                                                            border: Border.all(
+                                                                color: Colors
+                                                                    .grey
+                                                                    .shade400),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        10),
+                                                            color: Colors
+                                                                .grey.shade400),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(2.0),
+                                                          child: Text(
+                                                            "Completed",
+                                                            style: TextStyle(
+                                                              color:
+                                                                  Colors.white,
+                                                              fontSize: 15,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                    : Text(''),
+                              ],
+                            ),
                           ],
                         ),
                       ),

@@ -23,7 +23,7 @@ class _Admin_homeState extends State<Admin_home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade200,
+        backgroundColor: Colors.lightBlue.shade100,
         leading: Padding(
           padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
           child: CircleAvatar(
@@ -32,8 +32,8 @@ class _Admin_homeState extends State<Admin_home> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        selectedItemColor: Colors.blue,
+        backgroundColor: Colors.lightBlue.shade100,
+        selectedItemColor: Colors.blue.shade900,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

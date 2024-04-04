@@ -96,7 +96,7 @@ class _User_ProfileState extends State<User_Profile> {
           return Text("Error${snapshot.error}");
         }
         return Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.lightBlue.shade50,
           body: SingleChildScrollView(
             child: Center(
               child: Column(

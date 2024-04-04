@@ -66,7 +66,7 @@ class _Service_TabState extends State<Service_Tab> {
           showDialog(
               context: context,
               builder: (BuildContext context) => AlertDialog(
-                    backgroundColor: Colors.blue.shade200,
+                    backgroundColor:Colors.lightBlue.shade50,
                     title: Center(
                       child: Text("Add service"),
                     ),
@@ -93,10 +93,10 @@ class _Service_TabState extends State<Service_Tab> {
                               decoration: InputDecoration(
                                   filled: true,
                                   fillColor: Colors.white,
-                                  focusedBorder: UnderlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide: BorderSide(
-                                          color: Colors.blue.shade200))),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10)
+                                  )
+                              ),
                             ),
                           ),
                           SizedBox(
@@ -128,7 +128,7 @@ class _Service_TabState extends State<Service_Tab> {
         child: Icon(size: 50, Icons.add),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade300,
+        backgroundColor:Colors.lightBlue.shade100,
         title: Text(
           "Services",
           style: TextStyle(fontSize: 30),

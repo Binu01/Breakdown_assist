@@ -33,7 +33,7 @@ class _Admin_loginState extends State<Admin_login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade50,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Form(
           key: _Key,
@@ -57,6 +57,7 @@ class _Admin_loginState extends State<Admin_login> {
               Text(
                 "Admin Login",
                 style: TextStyle(
+                    color: Colors.blueAccent,
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
                     decoration: TextDecoration.underline),
@@ -88,7 +89,7 @@ class _Admin_loginState extends State<Admin_login> {
                   controller: userctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    fillColor: Colors.lightBlue.shade100,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -123,7 +124,7 @@ class _Admin_loginState extends State<Admin_login> {
                   obscureText: showpassword,
                   decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.white,
+                      fillColor: Colors.lightBlue.shade100,
                       border: OutlineInputBorder(
                           borderSide: BorderSide.none,
                           borderRadius: BorderRadius.circular(10)),
@@ -135,7 +136,7 @@ class _Admin_loginState extends State<Admin_login> {
                             });
                           },
                           icon: showpassword
-                              ?  Icon(Icons.visibility)
+                              ? Icon(Icons.visibility)
                               : Icon(Icons.visibility_off))),
                 ),
               ),

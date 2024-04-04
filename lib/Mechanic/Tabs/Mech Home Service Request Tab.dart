@@ -33,7 +33,7 @@ class _Mech_Req_TabState extends State<Mech_Req_Tab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor:  Colors.white,
       body: FutureBuilder(
           future: FirebaseFirestore.instance.collection("request").where('mechid',isEqualTo: ID).get(),
           builder:
@@ -51,7 +51,7 @@ class _Mech_Req_TabState extends State<Mech_Req_Tab> {
             final detail = snapshot.data?.docs ?? [];
             return ListView.separated(
                 separatorBuilder: (context, index) => Divider(
-                      thickness: 5,
+
                       color: Colors.white,
                     ),
                 itemCount: detail.length,

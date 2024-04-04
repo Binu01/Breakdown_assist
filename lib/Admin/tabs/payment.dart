@@ -12,7 +12,7 @@ class _PaymentTabState extends State<PaymentTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blue.shade200,
+        backgroundColor: Colors.white,
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
           child: FutureBuilder(
@@ -34,7 +34,7 @@ class _PaymentTabState extends State<PaymentTab> {
                     itemCount: details.length,
                     itemBuilder: (context, index) {
                       return Card(
-                        color: Colors.white,
+                        color: Colors.lightBlue.shade50,
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(30, 5, 15, 5),
                           child: Column(

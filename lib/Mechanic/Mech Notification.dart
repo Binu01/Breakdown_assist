@@ -14,7 +14,7 @@ class _Mech_NotificationState extends State<Mech_Notification> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.blue.shade300,
+          backgroundColor: Colors.lightBlue.shade100,
           title: Text(
             "Notification",
             style: TextStyle(fontSize: 30),

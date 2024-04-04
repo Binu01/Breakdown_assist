@@ -83,7 +83,7 @@ class _User_Mechanic_ListState extends State<User_Mechanic_List> {
                                   SizedBox(
                                     height: 10,
                                   ),
-                                  Text("Fuel Leacking",
+                                  Text(mech[index]['location'],
                                       style: TextStyle(fontSize: 20)),
                                   SizedBox(
                                     height: 10,

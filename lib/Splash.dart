@@ -1,5 +1,6 @@
 import 'package:breakdown_assist/user%20or%20mech%20page.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class Splashscrn extends StatefulWidget {
   const Splashscrn({super.key});
@@ -25,12 +26,12 @@ Navigator.pushReplacement(context,
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade100,
+      backgroundColor: Colors.black,
       body: Center(
         child: SizedBox(
           height: 300,
           width: 330,
-          child: Image.asset("Assets/splash img 1.jpg"),
+          child: Lottie.asset("Assets/Animation - 1712228504251.json"),
         ),
       ),
     );

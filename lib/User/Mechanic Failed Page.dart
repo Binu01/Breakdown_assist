@@ -12,8 +12,6 @@ class Mech_failed_page extends StatefulWidget {
 }
 
 class _Mech_failed_pageState extends State<Mech_failed_page> {
-
-
   late DocumentSnapshot detail;
   getdata() async {
     detail = await FirebaseFirestore.instance
@@ -24,8 +22,8 @@ class _Mech_failed_pageState extends State<Mech_failed_page> {
 
   void failed(id) {
     FirebaseFirestore.instance.collection('request').doc(id).update({
-      'payment':6,
-      'final':1,
+      'payment': 6,
+      'final': 1,
       'rating': rating,
     }).then((value) => Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => User_Home())));
@@ -36,7 +34,7 @@ class _Mech_failed_pageState extends State<Mech_failed_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade200,
+        backgroundColor: Colors.lightBlue.shade100,
         centerTitle: true,
         title: Text(
           "Failed Project",
@@ -61,14 +59,16 @@ class _Mech_failed_pageState extends State<Mech_failed_page> {
                   children: [
                     SizedBox(
                       height: 30,
-                    ),detail['mechprofile']==''?
-                    CircleAvatar(
-                      radius: 60,
-                      backgroundImage: AssetImage("Assets/profile img.png"),
-                    ):CircleAvatar(
-                      radius: 60,
-                      backgroundImage: NetworkImage('mechprofile'),
                     ),
+                    detail['mechprofile'] == ''
+                        ? CircleAvatar(
+                            radius: 60,
+                      backgroundImage: NetworkImage( detail['mechprofile']),
+                          )
+                        : CircleAvatar(
+                            radius: 60,
+                            backgroundImage: AssetImage("Assets/profile img.png"),
+                          ),
                     SizedBox(
                       height: 10,
                     ),
@@ -100,7 +100,6 @@ class _Mech_failed_pageState extends State<Mech_failed_page> {
                     SizedBox(
                       height: 10,
                     ),
-
                     SizedBox(
                       height: 50,
                     ),
@@ -118,6 +117,7 @@ class _Mech_failed_pageState extends State<Mech_failed_page> {
                       height: 180,
                       width: 300,
                       decoration: BoxDecoration(
+                        color: Colors.lightBlue.shade50,
                           border: Border.all(
                             color: Colors.black,
                           ),
@@ -142,13 +142,13 @@ class _Mech_failed_pageState extends State<Mech_failed_page> {
                             fixedSize: Size(180, 30),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
-                            backgroundColor: Colors.blue,
+                            backgroundColor: Colors.blueAccent,
                             foregroundColor: Colors.white),
                         onPressed: () {
                           showDialog(
                               context: context,
                               builder: (BuildContext context) => AlertDialog(
-                                    backgroundColor: Colors.blue.shade200,
+                                    backgroundColor: Colors.lightBlue.shade50,
                                     title: Center(
                                       child: Text("Rating"),
                                     ),
@@ -188,7 +188,7 @@ class _Mech_failed_pageState extends State<Mech_failed_page> {
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               10)),
-                                                  backgroundColor: Colors.blue,
+                                                  backgroundColor: Colors.blueAccent,
                                                   foregroundColor:
                                                       Colors.white),
                                               onPressed: () {

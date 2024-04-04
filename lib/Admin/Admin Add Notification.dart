@@ -35,7 +35,7 @@ class _AddNotificationState extends State<AddNotification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade50,
+      backgroundColor: Colors.lightBlue.shade50,
       body:SingleChildScrollView(
         child: Form(
           key: _key,
@@ -123,7 +123,7 @@ class _AddNotificationState extends State<AddNotification> {
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Colors.blueAccent,
                     foregroundColor: Colors.white,
                   ),
                   onPressed: (){

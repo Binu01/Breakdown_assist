@@ -21,7 +21,7 @@ class _User_HomeState extends State<User_Home> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.blue.shade400,
+          backgroundColor: Colors.lightBlue.shade100,
           leading:  Padding(
             padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
             child: InkWell(
@@ -36,9 +36,9 @@ class _User_HomeState extends State<User_Home> {
           ),
           title: Container(
             decoration: BoxDecoration(
-                color: Colors.lightBlue.shade50,
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(40),
-                border: Border.all(color: Colors.lightBlue.shade50)
+                border: Border.all(color:Colors.white)
             ),
             child: TextFormField(
               decoration:  InputDecoration(
@@ -68,7 +68,7 @@ class _User_HomeState extends State<User_Home> {
           child: Container(
             color: Colors.white,
             child: Card(
-              color: Colors.blue.shade200,
+              color: Colors.lightBlue.shade100,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular( 10),
               ),
@@ -76,7 +76,7 @@ class _User_HomeState extends State<User_Home> {
                   indicatorSize: TabBarIndicatorSize.tab,
                   indicator: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.blue.shade500
+                      color:Colors.blueAccent.shade100
                   ),
                   labelPadding:  EdgeInsets.symmetric(horizontal: 20),
                   // overlayColor: MaterialStateColor.transparent,

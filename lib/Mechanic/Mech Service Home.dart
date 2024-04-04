@@ -23,19 +23,19 @@ class _Mech_HomeState extends State<Mech_Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.blue.shade300,
-          selectedItemColor: Colors.black,
+          backgroundColor: Colors.lightBlue.shade100,
+          selectedItemColor: Colors.blue.shade900,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(color: Colors.black, Icons.person),
+              icon: Icon( Icons.person),
               label: 'Request',
             ),
             BottomNavigationBarItem(
-              icon: Icon(color: Colors.black, Icons.home_repair_service),
+              icon: Icon( Icons.home_repair_service),
               label: 'Service',
             ),
             BottomNavigationBarItem(
-              icon: Icon(color: Colors.black, Icons.star),
+              icon: Icon( Icons.star),
               label: 'Rating',
             ),
           ],
