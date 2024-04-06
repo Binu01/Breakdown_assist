@@ -10,11 +10,30 @@ class User_SignUp extends StatefulWidget {
 }
 
 class _User_SignUpState extends State<User_SignUp> {
+
+  List<String> locations = [
+    'Thiruvananthapuram',
+    'Kollam',
+    'Alappuzha',
+    'Pathanamthitta',
+    'Kottayam',
+    'Idukki',
+    'Ernakulam',
+    'Thrissur',
+    'Palakkad',
+    'Malappuram',
+    'Kozhikode',
+    'Wayanad',
+    'Kannur',
+    'Kasaragod'
+  ];
+  String? selectedLocation;
+
+
   var userctrl = TextEditingController();
   var phnctrl = TextEditingController();
   var emailctrl = TextEditingController();
   var passctrl = TextEditingController();
-  var locationctrl = TextEditingController();
 
   Future<dynamic> UserSignup() async {
     await FirebaseFirestore.instance.collection('UserDetails').add({
@@ -22,7 +41,7 @@ class _User_SignUpState extends State<User_SignUp> {
       'phone number': phnctrl.text,
       'email id': emailctrl.text,
       'password': passctrl.text,
-      'location':locationctrl.text,
+      'location':selectedLocation,
       'path':'',
       'status': 0,
     }).then((value) {
@@ -176,40 +195,6 @@ class _User_SignUpState extends State<User_SignUp> {
                   Padding(
                     padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                     child: Text(
-                      "Enter Your Location",
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: TextFormField(
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return '*Required';
-                    }
-                    return null;
-                  },
-                  controller: locationctrl,
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.lightBlue.shade100,
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10)),
-                    hintText: 'Enter Location',
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
-                    child: Text(
                       "Enter Your Password",
                       style: TextStyle(fontSize: 20),
                     ),
@@ -236,6 +221,25 @@ class _User_SignUpState extends State<User_SignUp> {
                     hintText: 'Enter Your Password',
                   ),
                 ),
+              ),
+              DropdownButton<String>(
+                dropdownColor: Colors.lightBlue.shade50,
+                iconEnabledColor: Colors.black,
+                borderRadius: BorderRadius.circular(10),
+                style: TextStyle(color: Colors.black, fontSize: 20),
+                hint: Text("select your location"),
+                value: selectedLocation, // Current selected location
+                onChanged: (String? newValue) {
+                  setState(() {
+                    selectedLocation = newValue!;
+                  });
+                },
+                items: locations.map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
               ),
               SizedBox(
                 height: 35,

@@ -75,14 +75,14 @@ class _Mech_Req_TabState extends State<Mech_Req_Tab> {
                                   height: 5,
                                 ),detail[index]['userprofile']==''?
                                 CircleAvatar(
-                                    radius: 40,
+                                    radius: 35,
                                     backgroundImage:
                                     AssetImage("Assets/profile img.png")
                                 ):
                                 CircleAvatar(
                                   backgroundImage:
                                       NetworkImage(detail[index]['userprofile']),
-                                  radius: 40,
+                                  radius: 35,
                                 ),
                                 Text(detail[index]['username'], style: TextStyle(fontSize: 20))
                               ],
@@ -91,7 +91,8 @@ class _Mech_Req_TabState extends State<Mech_Req_Tab> {
                               width: 70,
                             ),
                             Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
                                   detail[index]['service'],

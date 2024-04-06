@@ -54,6 +54,7 @@ class _Rating_TabState extends State<Rating_Tab> {
                 child: CircularProgressIndicator(),
               );
             }
+
             if (snapshot.hasError) {
               return Center(
                 child: Text("Error:${snapshot.error}"),

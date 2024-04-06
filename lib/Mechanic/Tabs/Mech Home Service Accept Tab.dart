@@ -59,30 +59,28 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            SizedBox(
-                              width: 10,
-                            ),
                             Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                SizedBox(
-                                  height: 5,
-                                ),
                                 detail[index]['userprofile'] == ''
                                     ? CircleAvatar(
-                                        radius: 40,
+                                        radius: 35,
                                         backgroundImage: AssetImage(
                                             "Assets/profile img.png"))
                                     : CircleAvatar(
                                         backgroundImage: NetworkImage(
                                             detail[index]['userprofile']),
-                                        radius: 40,
+                                        radius: 35,
                                       ),
                                 Text(detail[index]["username"],
-                                    style: TextStyle(fontSize: 20)),
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold)),
                               ],
                             ),
                             Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   detail[index]['service'],
@@ -97,17 +95,19 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                               ],
                             ),
                             Column(
+                              // mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 detail[index]['payment'] == 0
                                     ? Container(
+                                  height: 30,
+                                  width: 133,
                                         decoration: BoxDecoration(
                                             border: Border.all(
                                                 color: Colors.orange),
                                             borderRadius:
                                                 BorderRadius.circular(10),
                                             color: Colors.orange),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(2.0),
+                                        child: Center(
                                           child: Text(
                                             "Work in progress",
                                             style: TextStyle(
@@ -119,15 +119,15 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                                       )
                                     : detail[index]['payment'] == 3
                                         ? Container(
+                                  height: 30,
+                                  width: 133,
                                             decoration: BoxDecoration(
                                                 border: Border.all(
                                                     color: Colors.red),
                                                 borderRadius:
                                                     BorderRadius.circular(10),
                                                 color: Colors.red),
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(2.0),
+                                            child: Center(
                                               child: Text(
                                                 "Payment pending",
                                                 style: TextStyle(
@@ -139,6 +139,8 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                                           )
                                         : detail[index]['payment'] == 4
                                             ? Container(
+                                  height: 30,
+                                  width: 133,
                                                 decoration: BoxDecoration(
                                                     border: Border.all(
                                                         color: Colors.red),
@@ -146,9 +148,7 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                                                         BorderRadius.circular(
                                                             10),
                                                     color: Colors.red),
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(2.0),
+                                                child: Center(
                                                   child: Text(
                                                     "Failed",
                                                     style: TextStyle(
@@ -160,6 +160,8 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                                               )
                                             : detail[index]['payment'] == 5
                                                 ? Container(
+                                  height: 30,
+                                  width: 133,
                                                     decoration: BoxDecoration(
                                                         border: Border.all(
                                                             color:
@@ -168,10 +170,7 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                                                             BorderRadius
                                                                 .circular(10),
                                                         color: Colors.green),
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsets.all(
-                                                              2.0),
+                                                    child: Center(
                                                       child: Text(
                                                         "Payment successful",
                                                         style: TextStyle(
@@ -183,6 +182,8 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                                                   )
                                                 : detail[index]['payment'] == 6
                                                     ? Container(
+                                  height: 30,
+                                  width: 133,
                                                         decoration: BoxDecoration(
                                                             border: Border.all(
                                                                 color: Colors
@@ -194,10 +195,7 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                                                                         10),
                                                             color: Colors
                                                                 .grey.shade400),
-                                                        child: Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(2.0),
+                                                        child: Center(
                                                           child: Text(
                                                             "Completed",
                                                             style: TextStyle(
@@ -208,7 +206,10 @@ class _Mech_Accept_TabState extends State<Mech_Accept_Tab> {
                                                           ),
                                                         ),
                                                       )
-                                                    : Text(''),
+                                                    : Container(
+                                  height: 30,
+                                  width: 133,
+                                                      )
                               ],
                             ),
                           ],

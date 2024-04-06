@@ -11,13 +11,30 @@ class Mech_SignUp extends StatefulWidget {
 }
 
 class _Mech_SignUpState extends State<Mech_SignUp> {
+  List<String> locations = [
+    'Thiruvananthapuram',
+    'Kollam',
+    'Alappuzha',
+    'Pathanamthitta',
+    'Kottayam',
+    'Idukki',
+    'Ernakulam',
+    'Thrissur',
+    'Palakkad',
+    'Malappuram',
+    'Kozhikode',
+    'Wayanad',
+    'Kannur',
+    'Kasaragod'
+  ];
+  String? selectedLocation;
+
   var userctrl = TextEditingController();
   var phnctrl = TextEditingController();
   var emailctrl = TextEditingController();
   var expctrl = TextEditingController();
   var shopctrl = TextEditingController();
   var passctrl = TextEditingController();
-  var locationctrl = TextEditingController();
 
   Future<dynamic> MechSignup() async {
     await FirebaseFirestore.instance.collection('mechanics').add({
@@ -27,11 +44,12 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
       'work experience': expctrl.text,
       'shop name': shopctrl.text,
       'password': passctrl.text,
-      'location':locationctrl.text,
-      'path':'',
+      'location': selectedLocation,
+      'path': '',
       'status': 0,
     }).then((value) {
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>Mech_Login()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Mech_Login()));
     });
   }
 
@@ -64,7 +82,11 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
               ),
               Text(
                 "Mechanic Sign Up",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30,decoration: TextDecoration.underline,color: Colors.blueAccent),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                    decoration: TextDecoration.underline,
+                    color: Colors.blueAccent),
               ),
               SizedBox(
                 height: 20,
@@ -174,40 +196,6 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                   Padding(
                     padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
                     child: Text(
-                      "Enter Your Location",
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: TextFormField(
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return '*Required';
-                    }
-                    return null;
-                  },
-                  controller: locationctrl,
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.blue.shade200,
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10)),
-                    hintText: 'Location',
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
-                    child: Text(
                       "Enter Your Work Experience",
                       style: TextStyle(fontSize: 20),
                     ),
@@ -302,6 +290,25 @@ class _Mech_SignUpState extends State<Mech_SignUp> {
                     hintText: 'Password',
                   ),
                 ),
+              ),
+              DropdownButton<String>(
+                dropdownColor: Colors.lightBlue.shade50,
+                iconEnabledColor: Colors.black,
+                borderRadius: BorderRadius.circular(10),
+                style: TextStyle(color: Colors.black, fontSize: 20),
+                hint: Text("select your location"),
+                value: selectedLocation, // Current selected location
+                onChanged: (String? newValue) {
+                  setState(() {
+                    selectedLocation = newValue!;
+                  });
+                },
+                items: locations.map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
               ),
               SizedBox(
                 height: 50,

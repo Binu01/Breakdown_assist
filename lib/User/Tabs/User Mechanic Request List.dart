@@ -26,6 +26,7 @@ class _User_Mechanic_Request_ListState
     return FutureBuilder(
         future: FirebaseFirestore.instance
             .collection("request")
+            .where('status',isGreaterThan: 0)
             .where('userid', isEqualTo: ID)
             .get(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -219,7 +220,10 @@ class _User_Mechanic_Request_ListState
                                         ),
                                       ),
                                     )
-                                        : Text(""),
+                                        : Container(
+                                      height: 35,
+                                      width: 180,
+                                    ),
                                   ],
                                 )
                               ],
