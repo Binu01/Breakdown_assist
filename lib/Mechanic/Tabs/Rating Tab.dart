@@ -135,7 +135,6 @@ class _Rating_TabState extends State<Rating_Tab> {
                                     itemSize: 20,
                                     initialRating: userdetail[index]['rating'],
                                     direction: Axis.horizontal,
-                                    allowHalfRating: true,
                                     itemCount: 5,
                                     itemBuilder: (context, _) => Icon(
                                       Icons.star,

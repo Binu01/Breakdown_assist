@@ -13,6 +13,15 @@ class User_Login extends StatefulWidget {
 }
 
 class _User_LoginState extends State<User_Login> {
+
+  @override
+  void initState() {
+    super.initState();
+    showpassword = true;
+  }
+
+  var showpassword;
+
   var Mailctrl = TextEditingController();
   var Passctrl = TextEditingController();
 
@@ -111,7 +120,7 @@ class _User_LoginState extends State<User_Login> {
                     }
                     return null;
                   },
-                  obscureText: true,
+                  obscureText: showpassword,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.lightBlue.shade100,
@@ -119,6 +128,15 @@ class _User_LoginState extends State<User_Login> {
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
                     hintText: 'Password',
+                      suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              showpassword = !showpassword;
+                            });
+                          },
+                          icon: showpassword
+                              ? Icon(Icons.visibility)
+                              : Icon(Icons.visibility_off))
                   ),
                 ),
               ),

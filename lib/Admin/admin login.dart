@@ -12,6 +12,7 @@ class Admin_login extends StatefulWidget {
 class _Admin_loginState extends State<Admin_login> {
   @override
   void initState() {
+    super.initState();
     showpassword = true;
   }
 

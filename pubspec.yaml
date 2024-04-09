@@ -42,6 +42,7 @@ dependencies:
   firebase_storage: ^11.6.11
   image_picker: ^1.0.7
   lottie: ^3.1.0
+  number_paginator:
   intl:
 
 dev_dependencies:

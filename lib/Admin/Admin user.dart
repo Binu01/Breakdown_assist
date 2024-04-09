@@ -154,68 +154,88 @@ class _AdminUserState extends State<AdminUser> {
                                     borderRadius: BorderRadius.circular(20)),
                                 hintText: user['email id']),
                           ),
-                        ), Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child:user['status']== 0?Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                height: 190,
-                              ),
-                              ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(5)),
-                                      backgroundColor: Colors.green.shade300,
-                                      foregroundColor: Colors.white),
-                                  onPressed: () {
-                                    accept(widget.id);
-                                  },
-                                  child: Text("Accept",
-                                      style: TextStyle(fontSize: 20))),
-                              SizedBox(
-                                width: 75,
-                              ),
-                              ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(5)),
-                                      backgroundColor: Colors.red.shade300,
-                                      foregroundColor: Colors.white),
-                                  onPressed: () {
-                                    reject(widget.id);
-                                  },
-                                  child: Text(
-                                    "Reject",
-                                    style: TextStyle(fontSize: 20),
-                                  )),
-                            ],
-                          ):user['status'] ==1? Padding(
-                            padding: const EdgeInsets.only(top: 70),
-                            child: Container(
-                              decoration: BoxDecoration(
-                               borderRadius: BorderRadius.circular(10),
-                                color: Colors.green.shade300
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text("Accepted",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                              ),
-                            ),
-                          ): Padding(
-                            padding: const EdgeInsets.only(top: 70),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.red.shade300
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text("Rejected",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                              ),
-                            ),
-                          )
                         ),
+                        Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: user['status'] == 0
+                                ? Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        height: 190,
+                                      ),
+                                      ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(5)),
+                                              backgroundColor:
+                                                  Colors.green.shade300,
+                                              foregroundColor: Colors.white),
+                                          onPressed: () {
+                                            accept(widget.id);
+                                          },
+                                          child: Text("Accept",
+                                              style: TextStyle(fontSize: 20))),
+                                      SizedBox(
+                                        width: 75,
+                                      ),
+                                      ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(5)),
+                                              backgroundColor:
+                                                  Colors.red.shade300,
+                                              foregroundColor: Colors.white),
+                                          onPressed: () {
+                                            reject(widget.id);
+                                          },
+                                          child: Text(
+                                            "Reject",
+                                            style: TextStyle(fontSize: 20),
+                                          )),
+                                    ],
+                                  )
+                                : user['status'] == 1
+                                    ? Padding(
+                                        padding: const EdgeInsets.only(top: 70),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              color: Colors.green.shade300),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text(
+                                              "Accepted",
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    : Padding(
+                                        padding: const EdgeInsets.only(top: 70),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              color: Colors.red.shade300),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text(
+                                              "Rejected",
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                        ),
+                                      )),
                       ],
                     ),
                   ),

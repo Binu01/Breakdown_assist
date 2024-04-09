@@ -13,6 +13,14 @@ class Mech_Login extends StatefulWidget {
 }
 
 class _Mech_LoginState extends State<Mech_Login> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    showpassword = true;
+  }
+
+  var showpassword;
   var mailctrl = TextEditingController();
   var passctrl = TextEditingController();
 
@@ -113,7 +121,7 @@ class _Mech_LoginState extends State<Mech_Login> {
                     return null;
                   },
                   controller: passctrl,
-                  obscureText: true,
+                  obscureText: showpassword,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.lightBlue.shade100,
@@ -121,6 +129,15 @@ class _Mech_LoginState extends State<Mech_Login> {
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
                     hintText: 'Password',
+                      suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              showpassword = !showpassword;
+                            });
+                          },
+                          icon: showpassword
+                              ? Icon(Icons.visibility)
+                              : Icon(Icons.visibility_off))
                   ),
                 ),
               ),

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
+import 'package:number_paginator/number_paginator.dart';
 import '../User Mechanic Details Page.dart';
 
 class User_Mechanic_List extends StatefulWidget {
@@ -14,6 +14,9 @@ class User_Mechanic_List extends StatefulWidget {
 }
 
 class _User_Mechanic_ListState extends State<User_Mechanic_List> {
+  int currentPage = 0; // Initialize currentPage here
+  int itemsPerPage = 5;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,96 +48,122 @@ class _User_Mechanic_ListState extends State<User_Mechanic_List> {
             // Show all mechanics if no location selected
             filteredMechanics = [...mech];
           }
-          return ListView.separated(
-            separatorBuilder: (context, index) => Divider(
-              thickness: 5,
-              color: Colors.white,
-            ),
-            itemCount: filteredMechanics.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Padding(
-                padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => User_Mech_Detail_pg(
-                          id: filteredMechanics[index].id,
+          final totalItems = filteredMechanics.length;
+          final totalPages = (totalItems / itemsPerPage).ceil();
+
+          return Column(
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  itemCount: (currentPage == totalPages - 1)
+                      ? totalItems - (currentPage * itemsPerPage)
+                      : itemsPerPage,
+                  itemBuilder: (BuildContext context, int index) {
+                    final dataIndex = (currentPage * itemsPerPage) + index;
+                    if (dataIndex >= totalItems) {
+                      return SizedBox();
+                    }
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => User_Mech_Detail_pg(
+                              id: filteredMechanics[dataIndex].id,
+                            ),
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Card(
+                          color: Colors.lightBlue.shade50,
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  filteredMechanics[dataIndex]['path'] == ''
+                                      ? CircleAvatar(
+                                    radius: 40,
+                                    backgroundImage: AssetImage(
+                                        "Assets/profile img.png"),
+                                  )
+                                      : CircleAvatar(
+                                    backgroundImage: NetworkImage(
+                                        filteredMechanics[dataIndex]
+                                        ['path']),
+                                    radius: 40,
+                                  ),
+                                  Text(
+                                    filteredMechanics[dataIndex]['username'],
+                                    style: TextStyle(fontSize: 20),
+                                  )
+                                ],
+                              ),
+                              Spacer(),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    filteredMechanics[dataIndex]
+                                    ['work experience'],
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    filteredMechanics[dataIndex]['location'],
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.green.shade400,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(5.0),
+                                        child: Text(
+                                          "Available",
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Spacer(),
+                            ],
+                          ),
                         ),
                       ),
                     );
                   },
-                  child: Card(
-                    color: Colors.lightBlue.shade50,
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: 10,
-                            ),
-                            filteredMechanics[index]['path'] == ''
-                                ? CircleAvatar(
-                                    radius: 40,
-                                    backgroundImage:
-                                        AssetImage("Assets/profile img.png"),
-                                  )
-                                : CircleAvatar(
-                                    backgroundImage: NetworkImage(
-                                        filteredMechanics[index]['path']),
-                                    radius: 40,
-                                  ),
-                            Text(filteredMechanics[index]['username'],
-                                style: TextStyle(fontSize: 20))
-                          ],
-                        ),
-                        Spacer(),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              filteredMechanics[index]['work experience'],
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(filteredMechanics[index]['location'],
-                                style: TextStyle(fontSize: 20)),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.green.shade400,
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(5.0),
-                                  child: Text(
-                                    "Available",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Spacer(),
-                      ],
-                    ),
-                  ),
                 ),
-              );
-            },
+              ),
+              NumberPaginator(
+                numberPages: totalPages,
+                initialPage: currentPage,
+                onPageChange: (int newPage) {
+                  setState(() {
+                    currentPage = newPage;
+                  });
+                },
+              ),
+            ],
           );
         },
       ),

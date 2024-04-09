@@ -42,15 +42,18 @@ class _NotificationTabState extends State<NotificationTab> {
             }
             final notification = snapshot.data?.docs??[];
             return Padding(
-              padding: const EdgeInsets.symmetric(
-                  vertical: 10,
-                  horizontal: 5
-              ),
-              child: ListView.builder(
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+              child: ListView.separated(
+                  separatorBuilder: (context, index) => Divider(
+                    color: Colors.white,
+                  ),
                   itemCount: notification.length,
                   itemBuilder: (context,index){
-                    return Card(
-                      color: Colors.lightBlue.shade50,
+                    return Container(
+                      decoration: BoxDecoration(
+                          color: Colors.lightBlue.shade50,
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all()),
                       child:Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

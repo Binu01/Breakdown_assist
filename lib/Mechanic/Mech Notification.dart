@@ -37,58 +37,58 @@ class _Mech_NotificationState extends State<Mech_Notification> {
                 );
               }
               final notification = snapshot.data?.docs ?? [];
-              return ListView.separated(
-                  separatorBuilder: (context, index) => Divider(
-                        thickness: 5,
-                        color: Colors.white,
-                      ),
-                  itemCount: notification.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: Colors.lightBlue.shade50,
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all()),
-                          child: Column(children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(15),
-                                  child: Text(notification[index]['matter'],
-                                      style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(10),
-                                  child: Text(notification[index]['time']),
-                                )
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                SizedBox(
-                                  width: 280,
-                                  child: Text(notification[index]['content'],
-                                      style: TextStyle(fontSize: 20)),
-                                ),
+              return Padding(
+                padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                child: ListView.separated(
+                    separatorBuilder: (context, index) => Divider(
+                          color: Colors.white,
+                        ),
+                    itemCount: notification.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        decoration: BoxDecoration(
+                            color: Colors.lightBlue.shade50,
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all()),
+                        child: Column(children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(15),
+                                child: Text(notification[index]['matter'],
+                                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: Text(notification[index]['time']),
+                              )
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: 280,
+                                child: Text(notification[index]['content'],
+                                    style: TextStyle(fontSize: 20)),
+                              ),
 
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(10),
-                                  child: Text(notification[index]['date']),
-                                )
-                              ],
-                            )
-                          ]),
-                        ));
-                  });
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: Text(notification[index]['date']),
+                              )
+                            ],
+                          )
+                        ]),
+                      );
+                    }),
+              );
             }));
   }
 }

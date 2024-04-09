@@ -10,7 +10,6 @@ class User_SignUp extends StatefulWidget {
 }
 
 class _User_SignUpState extends State<User_SignUp> {
-
   List<String> locations = [
     'Thiruvananthapuram',
     'Kollam',
@@ -29,7 +28,6 @@ class _User_SignUpState extends State<User_SignUp> {
   ];
   String? selectedLocation;
 
-
   var userctrl = TextEditingController();
   var phnctrl = TextEditingController();
   var emailctrl = TextEditingController();
@@ -41,8 +39,8 @@ class _User_SignUpState extends State<User_SignUp> {
       'phone number': phnctrl.text,
       'email id': emailctrl.text,
       'password': passctrl.text,
-      'location':selectedLocation,
-      'path':'',
+      'location': selectedLocation,
+      'path': '',
       'status': 0,
     }).then((value) {
       Navigator.push(
@@ -145,7 +143,7 @@ class _User_SignUpState extends State<User_SignUp> {
                   controller: phnctrl,
                   decoration: InputDecoration(
                     filled: true,
-                    fillColor:Colors.lightBlue.shade100,
+                    fillColor: Colors.lightBlue.shade100,
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10)),
@@ -259,8 +257,7 @@ class _User_SignUpState extends State<User_SignUp> {
                   },
                   child: Text(
                     "SignUp",
-                    style:
-                        TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   )),
               SizedBox(
                 height: 30,
